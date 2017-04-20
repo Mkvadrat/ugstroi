@@ -1,0 +1,7 @@
+/* font-family: "MyriadPro"; */
+@font-face {
+    font-family: "MyriadPro";
+    src: url("../fonts/MyriadPro.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

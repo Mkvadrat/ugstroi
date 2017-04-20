@@ -1,0 +1,396 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-09-26 12:51+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Categories imported into WP Media Folder. Enjoy!!!"
+msgstr "Категории импортированы в WP Media Folder. Наслаждайтесь!!!"
+
+msgid "Import categories now"
+msgstr "Импортировать категории"
+
+msgid "No thanks "
+msgstr "Нет, спасибо"
+
+msgid "View all categories"
+msgstr "Смотреть Все Категории"
+
+msgid ""
+"You've just installed WP Media Folder, to save your time we can import your "
+"media categories into WP Media Folder"
+msgstr ""
+"Вы только что установили WP Медиа Folder, чтобы сэкономить ваше время, мы "
+"можем импортировать медиа категории в WP Медиа Folder"
+
+msgid "Create Folder"
+msgstr "Создать папку"
+
+msgid "Media Library"
+msgstr "Медиа библиотека"
+
+msgid "New folder"
+msgstr "Новая папка"
+
+msgid "Please give a name to this new folder"
+msgstr "Пожалуйста, дайте название этой новой папке"
+
+msgid "A term with the name and slug already exists with this parent."
+msgstr ""
+
+msgid "this folder contains sub-folder, delete sub-folders before"
+msgstr "Эта папка содержит вложенную папку, удалять вложенные папки перед"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Done"
+msgstr "Готово"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid "Override image"
+msgstr "Отменить изображение"
+
+msgid "Settings saved."
+msgstr "Настройки сохранены."
+
+msgid "WordPress taxonomy"
+msgstr "WordPress систематики"
+
+msgid "WP Media Folder Taxonomy"
+msgstr "Систематики Медиапапки"
+
+msgid "Import WP media categories"
+msgstr "Импорт категорий"
+
+msgid "Display only my own media"
+msgstr "Отображать только мною созданные"
+
+msgid "Create a gallery from folder"
+msgstr "Создание галереи из папки"
+
+msgid "Are you sure to want to delete this folder"
+msgstr "Вы уверены, что хотите, чтобы удалить эту папку"
+
+msgid "Media Folder Settings"
+msgstr "Настройки медиа папки"
+
+msgid "Gallery feature"
+msgstr "функция Галерея"
+
+msgid "Enable the gallery feature"
+msgstr "Включение функции галереи"
+
+msgid "Gallery image sizes available"
+msgstr "Галерея изображений доступные размеры"
+
+msgid "Gallery themes settings"
+msgstr "Настройки темы галереи"
+
+msgid "Determine the space between images"
+msgstr "Определить пространство между изображениями"
+
+msgid "Auto create one folder per editor"
+msgstr "Автоматически создавать одну папку каждого редактора"
+
+msgid ""
+"Show only own user media (an option will be added for admin in the media "
+"manager)            "
+msgstr ""
+"Показывать только собственные медиа файлы пользователя (вариант будет "
+"добавлен для администратора в медиа-менеджер)         "
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Masonry Theme"
+msgstr ""
+
+msgid "Space between images (padding)"
+msgstr "Пространство между изображениями (padding)"
+
+msgid "Portfolio Theme"
+msgstr "Тема для портфолио"
+
+msgid "px"
+msgstr ""
+
+msgid "Default"
+msgstr "Стандартное"
+
+msgid "Masonry"
+msgstr ""
+
+msgid "Portfolio"
+msgstr "Портфолио"
+
+msgid "Slider"
+msgstr "Слайдер"
+
+msgid "Thumbnail"
+msgstr "Миниатюры"
+
+msgid "Medium"
+msgstr "Среднее"
+
+msgid "Large"
+msgstr "Большое"
+
+msgid "Full Size"
+msgstr "Полный размер"
+
+msgid "Link to"
+msgstr "Ссылка к"
+
+msgid "Link target"
+msgstr "Назначение ссылки"
+
+msgid "Same Window"
+msgstr "То же самое окно"
+
+msgid "New Window"
+msgstr "Новое окно"
+
+msgid "Missing Attachment"
+msgstr "Недостающее вложение"
+
+msgid "Gallery themes"
+msgstr "Темы галереи"
+
+msgid "Columns"
+msgstr "Колонки"
+
+msgid "Gallery image size"
+msgstr "Размер изображения галереи"
+
+msgid "Lightbox size"
+msgstr "Размер Lightbox"
+
+msgid "Action on click"
+msgstr "Действие при клике"
+
+msgid "Lightbox"
+msgstr ""
+
+msgid "Attachment Page"
+msgstr "Страница приложений"
+
+msgid "Auto insert image in folder"
+msgstr "Автоматическая вставка изображения в папке"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No Categories"
+msgstr "Нет Категории"
+
+msgid "None"
+msgstr "Отсутствует"
+
+msgid "Sync/Import NextGEN galleries"
+msgstr "Синхронизация/Импорт NextGEN galleries"
+
+msgid "Gallery parameters"
+msgstr "Параметры галереи"
+
+msgid "Advanced parameters"
+msgstr "Дополнительные параметры"
+
+msgid "Access management"
+msgstr "Управление доступом"
+
+msgid "Drag and Drop me hover a folder"
+msgstr "Перетащите в папку"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Home"
+msgstr "Домой"
+
+msgid "You are here"
+msgstr "Вы здесь"
+
+msgid ""
+"Select the image size you can load in galleries. Custom image size available "
+"here can be generated by 3rd party plugins"
+msgstr ""
+"Выберите размер изображения, который Вы можете загрузить в галереях. "
+"Пользовательский размер изображения могут быть созданы с помощью сторонних "
+"плагинов"
+
+msgid "Name (Ascending)"
+msgstr "Имя (По нарастающей)"
+
+msgid "Name (Descending)"
+msgstr "Имя (По убывающей)"
+
+msgid "ID (Ascending)"
+msgstr "ID (По нарастающей)"
+
+msgid "ID (Descending)"
+msgstr "ID (По убывающей)"
+
+msgid "Date (Ascending)"
+msgstr "Дата (По нарастающей)"
+
+msgid "Date (Descending)"
+msgstr "Дата (По убывающей)"
+
+msgid "Title (Ascending)"
+msgstr "Заголовок (По нарастающей)"
+
+msgid "Title (Descending)"
+msgstr "Заголовок (По убывающей)"
+
+msgid "Size (Ascending)"
+msgstr "Размер (По нарастающей)"
+
+msgid "Size (Descending)"
+msgstr "Размер (По убывающей)"
+
+msgid "File type (Ascending)"
+msgstr "Тип файлов (По нарастающей)"
+
+msgid "File type (Descending)"
+msgstr "Тип файлов (По убывающей)"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "Zip & archives"
+msgstr "Архивы"
+
+msgid "Other"
+msgstr "Прочее"
+
+msgid "List default fillter size"
+msgstr "Ширина и высота в фильтре по умолчанию"
+
+msgid "List default fillter weight"
+msgstr "Размер файла в фильтре по умолчанию"
+
+msgid "Width"
+msgstr "Ширина"
+
+msgid "Height"
+msgstr "Высота"
+
+msgid "unit"
+msgstr "Ед. изм"
+
+msgid "Add new size"
+msgstr "Добавить новый размер"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid ""
+"Image dimension filtering available in filter. Display image with a "
+"dimension and above."
+msgstr "Фильтрация размеров изображения доступны в фильтре."
+
+msgid "Edit dimension"
+msgstr "Изменить размер"
+
+msgid "Remove dimension"
+msgstr "Удалить измерение"
+
+msgid "Min"
+msgstr "Мин"
+
+msgid "Max"
+msgstr "Макс"
+
+msgid "Remove weight"
+msgstr "Удалить размер"
+
+msgid "Edit weight"
+msgstr "Редактировать размер"
+
+msgid "Add weight"
+msgstr "Добавить размер"
+
+msgid ""
+"Select weight range which you would like to display in media library filter"
+msgstr ""
+"Выберите диапазон размеров, который Вы хотели бы отобразить в фильтре медиа-"
+"библиотеки"
+
+msgid "kB"
+msgstr "кб"
+
+msgid "MB"
+msgstr "Мб"
+
+msgid "(Ascending)"
+msgstr "(По нарастающей)"
+
+msgid "(Descending)"
+msgstr "(По убывающей)"
+
+msgid "Sort attachment"
+msgstr "Сортировка вложений"
+
+msgid "Small View"
+msgstr "Просмотр"
+
+msgid "Minimal size"
+msgstr "Минимальный"
+
+msgid "All weight"
+msgstr "Полный"
+
+msgid "Sort folder"
+msgstr "Сортировка папок"
+
+msgid "This value is already existing"
+msgstr "Это значение уже существует"
+
+msgid "Background color"
+msgstr ""
+
+msgid "Hover color"
+msgstr ""
+
+msgid "Font color"
+msgstr ""
+
+msgid "Single file"
+msgstr ""
+
+msgid "Folder cover"
+msgstr ""
+
+msgid "Hover font color"
+msgstr ""
+
+msgid "Media search"
+msgstr ""
+
+msgid "Search through all media folders"
+msgstr ""
+
+msgid "Search through all media or only in the current folder"
+msgstr ""
