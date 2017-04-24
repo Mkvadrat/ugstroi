@@ -68,7 +68,11 @@ get_header();
                     </main>
                 </div>
 
-				<?php get_sidebar(); ?>
+				<!-- start sidebar -->
+
+                <?php get_sidebar(); ?>
+
+                <!-- end sidebar -->
 
             </div>
         </div>

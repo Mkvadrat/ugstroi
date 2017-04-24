@@ -169,7 +169,7 @@ body {
         color: #fff;
         outline: none; }
       .header .menu ul li a:hover,
-      .header .menu ul li .active {
+      .header .menu .current-menu-item {
         background-image: -webkit-linear-gradient(top, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%);
         background-image: linear-gradient(to bottom, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%); }
       .header .menu ul li a:before {

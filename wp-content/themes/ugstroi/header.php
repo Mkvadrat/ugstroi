@@ -125,28 +125,28 @@ Version: 1.0
                             <li><a href="reviews.html">Отзывы</a></li>
                             <li><a href="contacts.html">Контакты</a></li>
                         </ul>-->
-												<?php
-													if (has_nav_menu('primary_menu')){
-														wp_nav_menu( array(
-															'theme_location'  => 'primary_menu',
-															'menu'            => '',
-															'container'       => false,
-															'container_class' => '',
-															'container_id'    => '',
-															'menu_class'      => '',
-															'menu_id'         => '',
-															'echo'            => true,
-															'fallback_cb'     => 'wp_page_menu',
-															'before'          => '',
-															'after'           => '',
-															'link_before'     => '',
-															'link_after'      => '',
-															'items_wrap'      => '<ul>%3$s</ul>',
-															'depth'           => 2,
-															'walker'          => '',
-														) );
-													}
-												?>
+						<?php
+							if (has_nav_menu('primary_menu')){
+								wp_nav_menu( array(
+									'theme_location'  => 'primary_menu',
+									'menu'            => '',
+									'container'       => false,
+									'container_class' => '',
+									'container_id'    => '',
+									'menu_class'      => '',
+									'menu_id'         => '',
+									'echo'            => true,
+									'fallback_cb'     => 'wp_page_menu',
+									'before'          => '',
+									'after'           => '',
+									'link_before'     => '',
+									'link_after'      => '',
+									'items_wrap'      => '<ul>%3$s</ul>',
+									'depth'           => 2,
+									'walker'          => '',
+								) );
+							}
+						?>
                     </nav>
                 </div>
             </div>

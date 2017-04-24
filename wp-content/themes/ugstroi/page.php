@@ -10,23 +10,37 @@ Version: 1.0
 
 get_header();
 ?>
-	<?php //if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-    <!-- start content -->
+
+	<!-- start content -->	
     <div class="container-fluid bg-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 pad-non-right">
-                    <main class="main-page">
-                        <!-- start main content -->
-                        <?php if (have_posts()): while (have_posts()): the_post(); ?>
-                            <?php the_content(); ?>
-                        <?php endwhile; endif; ?>
-                        <!-- end main content -->
+
+                    <!-- start bread crumbs -->
+
+                   <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+
+                    <!-- end bread crumbs -->
+
+                    <!-- start main content -->
+
+                    <main class="about-page">
+                        <h2 class="h2-title"><?php the_title(); ?></h2>
+						
+						<?php if (have_posts()): while (have_posts()): the_post(); ?>
+							<?php the_content(); ?>
+						<?php endwhile; endif; ?>
                     </main>
                 </div>
 
-				<?php get_sidebar(); ?>
+                <!-- end main content -->
 
+                <!-- start sidebar -->
+
+                <?php get_sidebar(); ?>
+
+                <!-- end sidebar -->
             </div>
         </div>
     </div>

@@ -26,11 +26,10 @@ get_header();
                     <!-- start main content -->
 
                     <main class="services-in-page">
-						<?php if (have_posts()): while (have_posts()): the_post(); ?>
-							<h2 class="h2-title"><?php the_title(); ?></h2>
-							
-							<?php the_content(); ?>
+						<h2 class="h2-title"><?php the_title(); ?></h2>
 						
+						<?php if (have_posts()): while (have_posts()): the_post(); ?>
+							<?php the_content(); ?>
 						<?php endwhile; endif; ?>
 
                         <h2 class="h2-title">Заказать услугу</h2>

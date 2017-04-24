@@ -38,13 +38,42 @@ Version: 1.0
 					?>		
 				</ul>
 			</div>
-
+			
 			<div class="our-news-block-side-bar">
-				<h3 class="sidebar-title">Наши <a href="#">новости</a></h3>
-				<p>Полезная для Вас новость</p>
-				<img src="images/news-photo-main-page.jpg" alt="">
-				<p>Просто отрывок текста новости на три строчки при клике на него будет продолжение...</p>
-				<a href="#">Читать дальше</a>
+			<?php $link = get_category_link( '8' ); ?>
+				<h3 class="sidebar-title">Наши <a href="<?php echo $link; ?>">новости</a></h3>
+			<?php 
+				$args_input = array(
+					'numberposts' => 1,
+					'category'    => 8,
+					'orderby'     => 'date',
+					'order'       => 'DESC',
+					'post_type'   => 'post',
+					'suppress_filters' => true, 
+				);
+
+				$news_line = get_posts( $args_input );
+				
+				if($news_line){
+				foreach($news_line as $post){ setup_postdata($post);
+				$image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+			?>
+				<p><?php echo wp_trim_words( $post->post_title, 2, '...' ); ?></p>
+				
+				<?php if(!empty($image_url)){ ?>
+					<img class="article-img-mini" src="<?php echo $image_url[0]; ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true ); ?>">
+				<?php }else{ ?>
+					<img class="article-img-mini" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/news-photo-main-page.jpg" alt="">
+				<?php } ?>
+				
+				<p><?php echo wp_trim_words( $post->post_content, 10, '...' ); ?></p>
+				<a href="<?php echo get_permalink($post->ID); ?>">Читать дальше</a>
+			
+			<?php
+				}
+				}
+				wp_reset_postdata();
+			?>
 			</div>
 			
 			<div class="our-reviews-block-side-bar">

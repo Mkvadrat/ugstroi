@@ -11,7 +11,7 @@ Version: 1.0
 get_header(); 
 ?>
 
-     <!-- start content -->
+	<!-- start content -->
     <div class="container-fluid bg-content">
         <div class="container">
             <div class="row">
@@ -25,13 +25,25 @@ get_header();
 
                     <!-- start main content -->
 
-                    <main class="about-page">
-                        <h2 class="h2-title"><?php the_title(); ?></h2>
+                    <main class="page-404">
+                        <div class="block-404">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/404.png" alt="">
 
-						<?php if (have_posts()): while (have_posts()): the_post(); ?>
-							<?php the_content(); ?>
-						<?php endwhile; endif; ?>
-                        
+                            <p class="underlined">Данная страница не найдена</p>
+                        </div>
+
+                        <h2 class="h2-title">Обратная связь</h2>
+
+                        <p>Задайте вопрос нашим менеджерам</p>
+
+						<div class="form">
+                            <input type="text" id="name" placeholder="Имя">
+                            <input type="tel" id="phone" placeholder="Телефон">
+                            <input type="email" id="email" placeholder="Почта">
+                            <textarea id="comment" placeholder="Сообщение"></textarea>
+                            <input type="submit" onclick="SendForm();" value="Отправить">
+                        </div>
+
                         <ul class="list-page">
                             <li>Перейти в <a href="galery.html">галерею</a></li>
                             <li>Перейти в <a href="projects.html">проекты</a></li>
