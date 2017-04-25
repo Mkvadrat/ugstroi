@@ -65,6 +65,12 @@ get_header();
                                 </div>
                             </li>
                         <?php } ?>
+						<?php }else{ ?>
+							<li class="empty">
+								<div class="info-block">
+								<p>Новости не найдены.</p>
+								</div>
+							</li>
 						<?php } ?>
                         </ul>
                         

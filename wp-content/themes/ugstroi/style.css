@@ -1424,7 +1424,8 @@ body {
       margin-right: 0; }
   .object-galery-page .back {
     text-align: center;
-    margin-bottom: 100px; }
+    margin-bottom: 100px;
+    margin-top: 30px;}
     .object-galery-page .back p {
       font-size: 18px;
       font-weight: 700;
@@ -1996,3 +1997,13 @@ body {
 /*----- start object page -----*/
 
 /*# sourceMappingURL=styles.css.map */
+
+.empty ::before{
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -20px;
+  width: 4px;
+  height: 100px;
+  background-color: #FFF;
+}
