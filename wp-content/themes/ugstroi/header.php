@@ -59,6 +59,7 @@ Version: 1.0
 				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
 			<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/common.js"></script>
+			<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/comments.js"></script>
 			
 			<!-- SWEETALERT -->
 			<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/sweetalert.css">

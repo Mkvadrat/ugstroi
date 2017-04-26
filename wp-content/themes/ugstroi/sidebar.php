@@ -77,14 +77,30 @@ Version: 1.0
 			</div>
 			
 			<div class="our-reviews-block-side-bar">
-				<h3 class="sidebar-title">Наши <a href="#">отзывы</a></h3>
-				<div class="reviews-block">
-					<h4 class="title">Руслан (СК “КРЫМСТРОЙ”)</h4>
-					<p>Работая с компанией “Югстроймонтаж”, я получил массу позитивных впечатлений..</p>
-					<a href="#">Читать дальше</a>
-				</div>
+				<h3 class="sidebar-title">Наши <a href="<?php echo get_permalink(602); ?>">отзывы</a></h3>
+				<?php 
+					$param = array(
+						'status'	=> 'approve',
+						'number'	=> '1',
+						'order'     => 'DESC',
+					);
+					
+					$comments = get_comments( $param );
+					
+					if(!empty($comments)){
+						foreach($comments as $comment){
+				?>
+					<div class="reviews-block">
+						<h4 class="title"><?php echo get_comment_author($comment->comment_ID); ?></h4>
+						<p><?php echo wp_trim_words( $comment->comment_content, $num_words = 8, $more = null ); ?></p>
+						<a href="<?php echo get_permalink(602); ?>">Читать дальше</a>
+					</div>
+				<?php
+						}
+					}
+				?>
 			</div>
-
+			
 			<?php if ( ! dynamic_sidebar() ) { ?>
 				<?php dynamic_sidebar( 'sidebar' ); ?>
 			<?php } ?>

@@ -81,12 +81,6 @@ if ( function_exists( 'add_theme_support' ) ) {
      add_theme_support( 'post-thumbnails' );
 }
 
-//Удаляем пунткы меню
-function remove_menu_items() {
-    remove_menu_page('edit-comments.php'); // Удаляем пункт "Комментарии"
-}
-add_action( 'admin_menu', 'remove_menu_items' );
-
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
 *********************************************************************РАБОТА С METAПОЛЯМИ*******************************************************************
@@ -1237,4 +1231,108 @@ function QuickForm(){
 add_action('wp_ajax_QuickForm', 'QuickForm');
 add_action('wp_ajax_nopriv_QuickForm', 'QuickForm');
 
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************КОММЕНТАРИИ*************************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Ajax функция добавления комментариев
+function true_add_ajax_comment(){
+	global $wpdb;
+	$comment_post_ID = isset($_POST['comment_post_ID']) ? (int) $_POST['comment_post_ID'] : 0;
+
+	$post = get_post($comment_post_ID);
+
+	if ( empty($post->comment_status) ) {
+		do_action('comment_id_not_found', $comment_post_ID);
+		exit;
+	}
+
+	$status = get_post_status($post);
+
+	$status_obj = get_post_status_object($status);
+
+	/*
+	 * различные проверки комментария
+	 */
+	if ( !comments_open($comment_post_ID) ) {
+		do_action('comment_closed', $comment_post_ID);
+		wp_die( __('Sorry, comments are closed for this item.') );
+	} elseif ( 'trash' == $status ) {
+		do_action('comment_on_trash', $comment_post_ID);
+		exit;
+	} elseif ( !$status_obj->public && !$status_obj->private ) {
+		do_action('comment_on_draft', $comment_post_ID);
+		exit;
+	} elseif ( post_password_required($comment_post_ID) ) {
+		do_action('comment_on_password_protected', $comment_post_ID);
+		exit;
+	} else {
+		do_action('pre_comment_on_post', $comment_post_ID);
+	}
+
+	$comment_author       = ( isset($_POST['author']) ) ? trim(strip_tags($_POST['author'])) : null;
+	$comment_author_email = ( isset($_POST['email']) ) ? trim($_POST['email']) : null;
+	$comment_phone   = ( isset($_POST['phone']) ) ? trim($_POST['phone']) : null;
+	$comment_content      = ( isset($_POST['comment']) ) ? trim($_POST['comment']) : null;
+
+	/*
+	 * проверяем, залогинен ли пользователь
+	 */
+	$error_comment = array();
+
+	$user = wp_get_current_user();
+	if ( $user->exists() ) {
+		if ( empty( $user->display_name ) )
+		$user->display_name=$user->user_login;
+		$comment_author       = $wpdb->escape($user->display_name);
+		$comment_author_email = $wpdb->escape($user->user_email);
+		$user_ID = get_current_user_id();
+		if ( current_user_can('unfiltered_html') ) {
+			if ( wp_create_nonce('unfiltered-html-comment_' . $comment_post_ID) != $_POST['_wp_unfiltered_html_comment'] ) {
+				kses_remove_filters(); // start with a clean slate
+				kses_init_filters(); // set up the filters
+			}
+		}
+	} else {
+		if ( get_option('comment_registration') || 'private' == $status )
+			$error_comment['error'] = wp_die( 'Ошибка: Вы должны зарегистрироваться или войти, чтобы оставлять комментарии.' );
+	}
+
+	$comment_type = '';
+
+	/*
+	 * проверяем, заполнил ли пользователь все необходимые поля
+ 	 */
+	if ( get_option('require_name_email') && !$user->exists() ) {
+		if ( 6 > strlen($comment_author_email) || '' == $comment_author ){
+			$error_comment['error'] = wp_die( 'Ошибка: заполните необходимые поля (Имя, Email).' );
+		}elseif ( !is_email($comment_author_email)){
+			$error_comment['error'] = wp_die( 'Ошибка: введенный вами email некорректный.' );
+		}
+	}
+
+	if ( '' == trim($comment_phone) ||  '<p><br></p>' == $comment_phone ){
+		$error_comment['error'] = wp_die( 'Ошибка: Вы забыли указать номер телефона.' );
+	}
+
+
+	if ( '' == trim($comment_content) ||  '<p><br></p>' == $comment_content ){
+		$error_comment['error'] = wp_die( 'Ошибка: Вы забыли про комментарий.' );
+	}
+
+	wp_json_encode($error_comment);
+
+	/*
+	 * добавляем новый коммент и сразу же обращаемся к нему
+	 */
+	$comment_parent = isset($_POST['comment_parent']) ? absint($_POST['comment_parent']) : 0;
+	$commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'comment_parent', 'user_ID');
+	$comment_id = wp_new_comment( $commentdata );
+	$comment = get_comment($comment_id);
+
+	die();
+}
+add_action('wp_ajax_ajaxcomments', 'true_add_ajax_comment'); // wp_ajax_{значение параметра action}
+add_action('wp_ajax_nopriv_ajaxcomments', 'true_add_ajax_comment'); // wp_ajax_nopriv_{значение параметра action}
 
