@@ -140,16 +140,16 @@ get_header();
 
                         <p>Отзыв будет доступен на сайте после модерации</p>
 						
-						<p id="respond"></p>
-						<form class="form" id="commentform">
-							<input type="text" name="author" id="author" placeholder="Имя">
-							<input type="text" name="phone" id="phone" placeholder="Телефон">
-							<input type="text" name="email" id="email" placeholder="Почта">
-							<textarea name="comment" id="comment" placeholder="Сообщение"></textarea>
-							<?php echo comment_id_fields(); ?>
-						</form>
-						
-						<input type="submit" onclick="submit()" value="Отправить">
+							<p id="respond"></p>
+							<form class="form" id="commentform">
+								<input type="text" name="author" id="author" placeholder="Имя">
+								<input type="text" name="phone" id="phone" placeholder="Телефон">
+								<input type="text" name="email" id="email" placeholder="Почта">
+								<textarea name="comment" id="comment" placeholder="Сообщение"></textarea>
+								<?php echo comment_id_fields(); ?>
+							</form>
+							
+							<input class="submit-button" type="submit" onclick="submit()" value="Отправить">
 						
                         <ul class="list-page">
                             <li>Перейти в <a href="galery.html">галерею</a></li>
