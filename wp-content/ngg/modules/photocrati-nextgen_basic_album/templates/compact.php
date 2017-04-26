@@ -18,22 +18,24 @@
                             <img class="Thumb"
                                  alt="<?php echo esc_attr($gallery->title); ?>"
                                  src="<?php echo nextgen_esc_url($gallery->previewurl); ?>"/>
+                            <span><?php echo_safe_html($gallery->title); ?></span>   
                         </a>
                     <?php else: ?>
                         <a class="Link gallery_link" href="<?php echo nextgen_esc_url($gallery->pagelink); ?>">
                             <img class="Thumb"
                                  alt="<?php echo esc_attr($gallery->title); ?>"
                                  src="<?php echo nextgen_esc_url($gallery->previewurl); ?>"/>
+                            <span><?php echo_safe_html($gallery->title); ?></span>   
                         </a>
                     <?php endif ?>
                     <?php $this->end_element(); ?>
 
-                <a class="ngg-album-desc"
+                <!--<a class="ngg-album-desc"
                    title="<?php echo esc_attr($gallery->title); ?>"
                    href="<?php echo nextgen_esc_url($gallery->pagelink); ?>"
                     <?php echo $max_width; ?>>
                     <span><?php echo_safe_html($gallery->title); ?></span>
-                </a>
+                </a>-->
             </li>
     <?php } ?>
     </ul>

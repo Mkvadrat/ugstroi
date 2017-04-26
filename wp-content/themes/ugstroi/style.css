@@ -820,7 +820,7 @@ body {
         height: 4px;
         background: #363852; }
     .galery-page .list-galery li:hover a:after {
-      height: 50px;
+      height: 100%;
       -webkit-transition: 1s;
       transition: 1s; }
     .galery-page .list-galery li:not(:hover) a:after {
@@ -2006,4 +2006,27 @@ body {
   width: 4px;
   height: 100px;
   background-color: #FFF;
+}
+
+
+
+/*----- 26.04.2017 -----*/
+/* button in template-reviews-page */
+
+.submit-button {
+  margin-top: -55px;
+  margin-right: 314px;
+  float: right;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #4d9dd5;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+}
+
+.submit-button:hover {
+  text-decoration: none;
 }
