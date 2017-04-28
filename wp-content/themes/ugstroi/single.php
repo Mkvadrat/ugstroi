@@ -33,9 +33,9 @@ get_header();
 						<?php endwhile; endif; ?>
                         
                         <ul class="list-page">
-                            <li>Перейти в <a href="galery.html">галерею</a></li>
-                            <li>Перейти в <a href="projects.html">проекты</a></li>
-                            <li>Перейти в <a href="contacts.html">контакты</a></li>
+                            <li>Перейти в <a href="<?php echo get_permalink(542); ?>">галерею</a></li>
+                            <li>Перейти в <a href="<?php echo get_term_link(12, 'projects-list'); ?>">проекты</a></li>
+                            <li>Перейти в <a href="<?php echo get_permalink(165); ?>"">контакты</a></li>
                         </ul>
                     </main>
                 </div>

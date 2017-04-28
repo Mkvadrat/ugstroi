@@ -57,5 +57,4 @@ Follow variables are useable :
  	<?php echo $pagination ?>
  	
 </div>
-
 <?php endif; ?>

@@ -95,14 +95,25 @@ function getMeta($meta_key){
 	return $value;
 }
 
-//Вывод id категории
-function getCurrentCatID(){
-	global $wp_query;
-	if(is_category()){
-		$cat_ID = get_query_var('cat');
-	}
-	return $cat_ID;
+function getMetaByID($meta_key, $id){
+	global $wpdb;
+	
+	$value = $wpdb->get_var( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND post_id = %d ORDER BY meta_id DESC LIMIT 1", $meta_key, $id) );
+	
+	return $value;
 }
+
+//Вывод * категории
+function getRubricByID($id){
+	global $wpdb;
+
+	$value = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->terms t JOIN $wpdb->term_relationships tr ON (tr.term_taxonomy_id = t.term_id) AND tr.object_id = %s", $id) );
+	
+	return $value;
+}
+
+
+
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
@@ -136,7 +147,7 @@ add_action( 'init', 'change_post_object_label' );
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
-****************************************************************ПАГИНАЦИЯ ДЛЯ РАЗДЕЛА НОВОСТИ**************************************************************
+********************************************************************ПАГИНАЦИЯ******************************************************************************
 ***********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************/
 //Переработанная пагинация для стилей
@@ -327,22 +338,225 @@ function true_post_type_our_services( $our_services ) {
 }
 add_filter( 'post_updated_messages', 'true_post_type_our_services' );
 
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+********************************************************************РАЗДЕЛ "ПРОЕКТЫ" В АДМИНКЕ*************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Вывод в админке раздела проекты
+function register_post_type_projects() {
+ 	$labels = array(
+	 'name' => 'Проекты',
+	 'singular_name' => 'Проекты',
+	 'add_new' => 'Добавить проект',
+	 'add_new_item' => 'Добавить новый проект',
+	 'edit_item' => 'Редактировать проект',
+	 'new_item' => 'Новый проект',
+	 'all_items' => 'Все проекты',
+	 'view_item' => 'Просмотр страницы проекта на сайте',
+	 'search_items' => 'Искать проект',
+	 'not_found' => 'Проект не найден.',
+	 'not_found_in_trash' => 'В корзине нет проекта.',
+	 'menu_name' => 'Проекты'
+	 );
+	 $args = array(
+		 'labels' => $labels,
+		 'public' => true,
+		 'exclude_from_search' => false,
+		 'show_ui' => true,
+		 'has_archive' => false,
+		 'menu_icon' => 'dashicons-hammer',
+		 'menu_position' => 20,
+		 'supports' =>  array('title','editor', 'thumbnail'),
+	 );
+ 	register_post_type('projects', $args);
+}
+add_action( 'init', 'register_post_type_projects' );
 
+function true_post_type_projects( $projects ) {
+	 global $post, $post_ID;
 
+	 $projects['projects'] = array(
+			 0 => '',
+			 1 => sprintf( 'Проекты обновлены. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+			 2 => 'Проект обновлён.',
+			 3 => 'Проект удалён.',
+			 4 => 'Проект обновлен.',
+			 5 => isset($_GET['revision']) ? sprintf( 'Проект восстановлен из редакции: %s', wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			 6 => sprintf( 'Проект опубликован на сайте. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+			 7 => 'Проект сохранен.',
+			 8 => sprintf( 'Отправлен на проверку. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+			 9 => sprintf( 'Запланирован на публикацию: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Просмотр</a>', date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+			 10 => sprintf( 'Черновик обновлён. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+	 );
+	 return $projects;
+}
+add_filter( 'post_updated_messages', 'true_post_type_projects' );
 
+//Категории для пользовательских записей "Обьекты"
+function create_taxonomies_projects()
+{
+    // Cats Categories
+    register_taxonomy('projects-list',array('projects'),array(
+        'hierarchical' => true,
+        'label' => 'Рубрики',
+        'singular_name' => 'Рубрика',
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'projects-list' )
+    ));
+}
+add_action( 'init', 'create_taxonomies_projects', 0 );
 
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*****************************************************ДОПОЛНИТЕЛЬНЫЕ ПОЛЯ ДЛЯ ТАКСОНОМИИ "ПРОЕКТЫ"**********************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Инициализация полей для таксономии "Проекты"
+function projects_custom_fields(){
+    add_action('projects-list_edit_form_fields', 'projects_custom_fields_form');
+    add_action('edited_projects-list', 'projects_custom_fields_save');
+}
+add_action('admin_init', 'projects_custom_fields', 1);
 
+//HTML код для вывода в админке таксономии
+function projects_custom_fields_form($tag){
+    $t_id = $tag->term_id;
+    $cat_meta = get_option("category_$t_id");
+?>
+   	<tr class="form-field">
+    <th scope="row" valign="top"><label for="extra2"><?php _e('Текст рубрики'); ?></label></th>
+    <td>
+		<?php wp_editor( stripcslashes($cat_meta['text_for_categories_projects_page']), 'wpeditor', array('textarea_name' => 'projects_meta[text_for_categories_projects_page]', 'textarea_rows' => 10, 'editor_css' => '<style>.wp-core-ui{width:95%;} </style>',) ); ?>
+    <br />
+        <span class="description"><?php _e('Текст для страницы рубрики "Проекты"'); ?></span>
+    </td>
+    </tr>
+<?php
+}
 
+//Функция сохранения данных для дополнительных полей таксономии
+function projects_custom_fields_save($term_id){
+    if (isset($_POST['projects_meta'])) {
+        $t_id = $term_id;
+        $cat_meta = get_option("category_$t_id");
+        $cat_keys = array_keys($_POST['projects_meta']);
+        foreach ($cat_keys as $key) {
+            if (isset($_POST['projects_meta'][$key])) {
+                $cat_meta[$key] = $_POST['projects_meta'][$key];
+            }
+        }
+        //save the option array
+        update_option("category_$t_id", $cat_meta);
+    }
+}
 
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*****************************************************************REMOVE CATEGORY_TYPE SLUG*********************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Удаление projects_list из url таксономии
+function true_remove_slug_from_category_projects( $url, $term, $taxonomy ){
+
+	$taxonomia_name = 'projects-list';
+	$taxonomia_slug = 'projects-list';
+
+	if ( strpos($url, $taxonomia_slug) === FALSE || $taxonomy != $taxonomia_name ) return $url;
+
+	$url = str_replace('/' . $taxonomia_slug, '', $url);
+
+	return $url;
+}
+add_filter( 'term_link', 'true_remove_slug_from_category_projects', 10, 3 );
+
+//Перенаправление url в случае удаления projects-list
+function parse_request_url_category_projects( $query ){
+
+	$taxonomia_name = 'projects-list';
+
+	if( $query['attachment'] ) :
+		$condition = true;
+		$main_url = $query['attachment'];
+	else:
+		$condition = false;
+		$main_url = $query['name'];
+	endif;
+
+	$termin = get_term_by('slug', $main_url, $taxonomia_name);
+
+	if ( isset( $main_url ) && $termin && !is_wp_error( $termin )):
+
+		if( $condition ) {
+			unset( $query['attachment'] );
+			$parent = $termin->parent;
+			while( $parent ) {
+				$parent_term = get_term( $parent, $taxonomia_name);
+				$main_url = $parent_term->slug . '/' . $main_url;
+				$parent = $parent_term->parent;
+			}
+		} else {
+			unset($query['name']);
+		}
+
+		switch( $taxonomia_name ):
+			case 'category':{
+				$query['category_name'] = $main_url;
+				break;
+			}
+			case 'post_tag':{
+				$query['tag'] = $main_url;
+				break;
+			}
+			default:{
+				$query[$taxonomia_name] = $main_url;
+				break;
+			}
+		endswitch;
+
+	endif;
+
+	return $query;
+
+}
+add_filter('request', 'parse_request_url_category_projects', 1, 1 );
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*****************************************************************REMOVE POST_TYPE SLUG*********************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Удаление из url таксономии
+function remove_slug_from_post( $post_link, $post, $leavename ) {
+	if ( 'our-services' != $post->post_type && 'projects' != $post->post_type || 'publish' != $post->post_status ) {
+		return $post_link;
+	}
+		$post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+	return $post_link;
+}
+add_filter( 'post_type_link', 'remove_slug_from_post', 10, 3 );
+
+function parse_request_url_post( $query ) {
+	if ( ! $query->is_main_query() )
+		return;
+
+	if ( 2 != count( $query->query ) || ! isset( $query->query['page'] ) ) {
+		return;
+	}
+
+	if ( ! empty( $query->query['name'] ) ) {
+		$query->set( 'post_type', array( 'post', 'our-services', 'projects', 'page' ) );
+	}
+}
+add_action( 'pre_get_posts', 'parse_request_url_post' );
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
 ********************************************************************ХЛЕБНЫЕ КРОШКИ*************************************************************************
 ***********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************/
-
 function dimox_breadcrumbs() {
-
   /* === ОПЦИИ === */
   $text['home'] = 'Главная'; // текст ссылки "Главная"
   $text['category'] = '%s'; // текст для страницы рубрики
@@ -428,13 +642,18 @@ function dimox_breadcrumbs() {
       if ($show_current) echo $before . get_the_time('Y') . $after;
 
     } elseif ( is_single() && !is_attachment() ) {
-      //Категории
+      //Категории (для single.php)
       if ($show_home_link) echo $sep;
       if ( get_post_type() != 'post' ) {
 		if( get_post_type() == 'our-services' ){			
 			printf($link, $home_url, $post_type->labels->singular_name);
 			
 			if ($show_current) echo $before . get_the_title() . $after;
+		}else if(get_post_type() == 'projects'){
+			$term = getRubricByID(get_the_ID());
+									
+			printf($link, $home_url . $term[0]->slug . '/', $term[0]->name);
+			if ($show_current) echo $sep . $before . get_the_title() . $after;
 		}else{
 			$post_type = get_post_type_object(get_post_type());
 			$slug = $post_type->rewrite;
@@ -456,12 +675,23 @@ function dimox_breadcrumbs() {
 
     // custom post type
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      if ( get_query_var('paged') ) {
-        echo $sep . sprintf($link, get_post_type_archive_link($post_type->name), $post_type->label) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
-      } else {
-        if ($show_current) echo $sep . $before . $post_type->label . $after;
-      }
+	//Категории (для category.php)
+	if(get_post_type() == 'projects'){		
+		$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+		
+		if ( get_query_var('paged') ) {		
+			echo $sep . sprintf($link, get_category_link($term->term_id), $term->name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+		} else {
+		  if ($show_current) echo $sep . $before . $term->name . $after;
+		}
+	}else{
+		$post_type = get_post_type_object(get_post_type());	  
+		if ( get_query_var('paged') ) {
+		  echo $sep . sprintf($link, get_page_link( $post_type->name), $post_type->label) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+		} else {
+		  if ($show_current) echo $sep . $before . $post_type->label . $after;
+		}
+	}
 
     } elseif ( is_attachment() ) {
       if ($show_home_link) echo $sep;
@@ -532,35 +762,6 @@ function dimox_breadcrumbs() {
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
-*****************************************************************REMOVE POST_TYPE SLUG*********************************************************************
-***********************************************************************************************************************************************************
-***********************************************************************************************************************************************************/
-//Удаление из url таксономии
-function remove_slug_from_post( $post_link, $post, $leavename ) {
-	if ( 'our-services' != $post->post_type || 'publish' != $post->post_status ) {
-		return $post_link;
-	}
-		$post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
-	return $post_link;
-}
-add_filter( 'post_type_link', 'remove_slug_from_post', 10, 3 );
-
-function parse_request_url_post( $query ) {
-	if ( ! $query->is_main_query() )
-		return;
-
-	if ( 2 != count( $query->query ) || ! isset( $query->query['page'] ) ) {
-		return;
-	}
-
-	if ( ! empty( $query->query['name'] ) ) {
-		$query->set( 'post_type', array( 'post', 'our-services', 'page' ) );
-	}
-}
-add_action( 'pre_get_posts', 'parse_request_url_post' );
-
-/**********************************************************************************************************************************************************
-***********************************************************************************************************************************************************
 ********************************************************************ФОРМЫ ОБРАТНОЙ СВЯЗИ*******************************************************************
 ***********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************/
@@ -589,9 +790,9 @@ function SendForm(){
 		$headers .= "From: $site_url\r\n";
 		$headers .= "Bcc: birthday-archive@example.com\r\n";
 		
-		$mes = "Имя: $name \nEmail: $email \nСообщение: $comment";
+		//$mes = "Имя: $name \nEmail: $email \nСообщение: $comment";
 		
-		/*$mes = '<html xmlns="http://www.w3.org/1999/xhtml">
+		$mes = '<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -789,7 +990,7 @@ function SendForm(){
 		<table>
 		<tr>
 
-		<td align="left"><h6 class="collapse" style="font-weight: 900; font-size: 14px; text-transform: uppercase; color: #ffffff;">Наталья Мельник психологические услуги</td>
+		<td align="left"><h6 class="collapse" style="font-weight: 900; font-size: 14px; text-transform: uppercase; color: #ffffff;">Югстрой Монтаж</td>
 		<td align="right"><h6 class="collapse" style="font-weight: 900; font-size: 14px; text-transform: uppercase; color: #ffffff;">Обратная связь</h6></td>
 		</tr>
 		</table>
@@ -854,7 +1055,7 @@ function SendForm(){
 		</table>
 
 		</body>
-		</html>';*/
+		</html>';
 
 		$send = mail($address, $email, $mes, $headers);
 
@@ -926,9 +1127,9 @@ function QuickForm(){
 		$headers .= "From: $site_url\r\n";
 		$headers .= "Bcc: birthday-archive@example.com\r\n";
 		
-		$mes = "Имя: $name \nТелефон: $tel";
+		//$mes = "Имя: $name \nТелефон: $tel";
 		
-		/*$mes = '<html xmlns="http://www.w3.org/1999/xhtml">
+		$mes = '<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -1126,7 +1327,7 @@ function QuickForm(){
 		<table>
 		<tr>
 
-		<td align="left"><h6 class="collapse" style="font-weight: 900; font-size: 14px; text-transform: uppercase; color: #ffffff;">Наталья Мельник психологические услуги</td>
+		<td align="left"><h6 class="collapse" style="font-weight: 900; font-size: 14px; text-transform: uppercase; color: #ffffff;">Югстрой Монтаж</td>
 		<td align="right"><h6 class="collapse" style="font-weight: 900; font-size: 14px; text-transform: uppercase; color: #ffffff;">Обратная связь</h6></td>
 		</tr>
 		</table>
@@ -1148,8 +1349,8 @@ function QuickForm(){
 		<td>
 		<!--<h3>Тема сообщения</h3>-->
 
-		<p>'.$comment.'</p>
-		<p>Дата записи на консультацию: '.$datepicker.'</p>
+		<p>Имя: '.$name.'</p>
+		<p>Обратная связь: '.$email.'</p>
 		<!-- Callout Panel -->
 		<!-- social & contact -->
 		<table class="social" width="100%">
@@ -1192,7 +1393,7 @@ function QuickForm(){
 		</table>
 
 		</body>
-		</html>';*/
+		</html>';
 
 		$send = mail($address, $email, $mes, $headers);
 
@@ -1335,4 +1536,3 @@ function true_add_ajax_comment(){
 }
 add_action('wp_ajax_ajaxcomments', 'true_add_ajax_comment'); // wp_ajax_{значение параметра action}
 add_action('wp_ajax_nopriv_ajaxcomments', 'true_add_ajax_comment'); // wp_ajax_nopriv_{значение параметра action}
-
