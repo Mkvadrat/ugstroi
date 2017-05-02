@@ -22,6 +22,9 @@ abbr[title], acronym[title] {
 
 * {
   box-sizing: border-box; }
+.padding-none {
+  padding: 0;
+}
 
 /*----- start mixins -----*/
 /*----- end mixins -----*/
@@ -143,13 +146,21 @@ body {
       transition: 0.5s; }
   .header .menu {
     margin-top: 91px; }
+    .header .menu button {
+      width: 40px;
+      height: 40px;
+      border: none;
+    }
+    .header .menu button i {
+      font-size: 27px;
+    }
   .header .menu ul {
     border-radius: 5px;
     border: 1px solid #4d89c6;
     box-shadow: 0 6px 3px rgba(4, 22, 34, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.18);
     background-image: -webkit-linear-gradient(bottom, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%);
     background-image: linear-gradient(to top, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%);
-    display: table !important;
+    display: table;
     position: relative;
     width: 100%;
     height: 50px; }
@@ -1237,7 +1248,9 @@ body {
   text-align: center; }
   .page-404 .block-404 img {
     padding-top: 180px;
-    padding-bottom: 40px; }
+    padding-bottom: 40px;
+    max-width: 483px;
+    width: 100%; }
   .page-404 .block-404 p {
     padding-bottom: 200px;
     font-size: 30px;

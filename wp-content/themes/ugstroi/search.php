@@ -11,7 +11,7 @@ Version: 1.0
 get_header(); ?>
 
     <!-- start content -->
-    <div class="container-fluid bg-content">
+    <div class="container-fluid bg-content padding-none">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 pad-non-right">

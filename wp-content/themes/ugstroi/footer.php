@@ -12,7 +12,7 @@ Version: 1.0
     <!--- start footer -->
 
     <footer class="footer">
-        <div class="container-fluid">
+        <div class="container-fluid padding-none">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
