@@ -166,6 +166,11 @@
 	.page-404 .block-404 p {
     	padding-bottom: 40px;
     }
+
+    .header .menu ul li:hover ul,
+    .header .menu ul li:hover ul:hover {
+    	display: none !important;
+    }
 }
 
 /* Small Devices, Tablets */
