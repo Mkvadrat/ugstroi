@@ -2044,3 +2044,20 @@ body {
 .submit-button:hover {
   text-decoration: none;
 }
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.services-in-page ul {
+font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #363852;
+    padding-bottom: 20px;
+    margin-left: 26px;
+list-style-type: disc;
+}

@@ -1,6 +1,7 @@
 <?php
 /**
  * @package All-in-One-SEO-Pack
+ * @version 2.3.12.2
  */
 
 if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
@@ -502,11 +503,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			$regex = '';
 			$cont  = 0;
 			foreach ( $list as $l ) {
-				if ( $cont && ! empty( $l ) ) {
-					$regex .= '|';
+				$trim_l = trim ( $l );
+				if ( ! empty( $trim_l ) ) {
+					if ( $cont ) {
+						$regex .= '|';
+					}
+					$cont = 1;
+					$regex .= preg_quote( trim( $l ), $quote );
 				}
-				$cont = 1;
-				$regex .= preg_quote( trim( $l ), $quote );
 			}
 
 			return $regex;
@@ -931,10 +935,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		 */
 		function settings_export( $buf ) {
 			global $aiosp;
-			$post_types       = null;
+			$post_types       = apply_filters( 'aioseop_export_settings_exporter_post_types', null );
 			$has_data         = null;
 			$general_settings = null;
-			$exporter_choices = '';
+			$exporter_choices = apply_filters( 'aioseop_export_settings_exporter_choices', '' );
 			if ( ! empty( $_REQUEST['aiosp_importer_exporter_export_choices'] ) ) {
 				$exporter_choices = $_REQUEST['aiosp_importer_exporter_export_choices'];
 			}
@@ -953,6 +957,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 				$buf .= $this->post_data_export( '_aioseop', array(
 					'posts_per_page' => - 1,
 					'post_type'      => $post_types,
+					'post_status' => array( 'publish', 'pending', 'draft', 'future', 'private', 'inherit' ),
 				) );
 			}
 
@@ -1763,6 +1768,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 
 		/**
 		 * Load scripts for module, can pass data to module script.
+		 * @since 2.3.12.3 Add missing wp_enqueue_media.
 		 */
 		function enqueue_scripts() {
 			wp_enqueue_script( 'sack' );
@@ -1775,6 +1781,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			if ( ! empty( $this->pointers ) ) {
 				wp_enqueue_script( 'wp-pointer', false, array( 'jquery' ) );
 			}
+			global $post;
+			if( !empty( $post->ID) ) {
+				wp_enqueue_media( array( 'post' => $post->ID ) );
+			}else{
+				wp_enqueue_media();
+            }
 			wp_enqueue_script( 'aioseop-module-script', AIOSEOP_PLUGIN_URL . 'js/modules/aioseop_module.js', array(), AIOSEOP_VERSION );
 			if ( ! empty( $this->script_data ) ) {
 				aioseop_localize_script_data();
@@ -2523,8 +2535,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			$this->settings_page_init();
 			?>
 			<div class="wrap <?php echo get_class( $this ); ?>">
+				<?php
+				ob_start();
+				do_action( $this->prefix . 'settings_header_errors', $location );
+				$errors = ob_get_clean();
+				echo $errors;
+				?>
 				<div id="aioseop_settings_header">
-					<?php if ( ! empty( $message ) ) {
+					<?php if ( ! empty( $message ) && empty( $errors ) ) {
 						echo "<div id=\"message\" class=\"updated fade\"><p>$message</p></div>";
 					} ?>
 					<div id="icon-aioseop" class="icon32"><br></div>

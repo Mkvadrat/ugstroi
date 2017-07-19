@@ -10,6 +10,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 		var $fb_object_types;
 		var $type;
 
+		/**
+		 * Module constructor.
+		 *
+		 * @since 2.4.14 Added display filter. 
+		 */
 		function __construct() {
 			add_action( 'admin_enqueue_scripts', array( $this, 'og_admin_enqueue_scripts' ) );
 
@@ -391,10 +396,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 					'condshow' => Array( 'aiosp_opengraph_gen_tags' => 'on' ),
 				),
 				'types'                  => Array(
-					'name'            => __( 'Enable Facebook Meta for', 'all-in-one-seo-pack' ),
+					'name'            => __( 'Enable Facebook Meta for Post Types', 'all-in-one-seo-pack' ),
 					'type'            => 'multicheckbox',
 					'initial_options' => $this->get_post_type_titles( Array( '_builtin' => false ) ),
-					'default'         => Array( 'post' => 'post', 'page' => 'page' ),
+					'default'         => Array( 'post' => 'Post', 'page' => 'Page' ),
 				),
 				'title'                  => Array(
 					'name'       => __( 'Title', 'all-in-one-seo-pack' ),
@@ -549,7 +554,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 						'setcard',
 						'customimg_twitter',
 					),
-					'display'   => $display,
+					'display'   => apply_filters( 'aioseop_opengraph_display', $display ),
 					'prefix'    => 'aioseop_opengraph_',
 				),
 			);
@@ -729,6 +734,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 		}
 
 		function filter_settings( $settings, $location, $current ) {
+            global $aiosp, $post;
 			if ( $location == 'opengraph' || $location == 'settings' ) {
 				$prefix = $this->get_prefix( $location ) . $location . '_';
 				if ( $location == 'opengraph' ) {
@@ -756,10 +762,27 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 					if ( isset( $this->options["aiosp_opengraph_defcard"] ) ) {
 						$settings[ $prefix . 'setcard' ]['default'] = $this->options["aiosp_opengraph_defcard"];
 					}
-					global $aiosp;
 					$info = $aiosp->get_page_snippet_info();
 					extract( $info );
-					$settings["{$prefix}title"]['placeholder'] = $title;
+
+                    // Description options
+					if ( is_object( $post ) )
+                    	// Always show excerpt
+                    	$description = empty( $this->options['aiosp_opengraph_generate_descriptions'] )
+                    		? $aiosp->trim_excerpt_without_filters(
+	                            $aiosp->internationalize( preg_replace( '/\s+/', ' ', $post->post_excerpt ) ),
+	                            1000
+	                        )
+                    		: $aiosp->trim_excerpt_without_filters(
+	                            $aiosp->internationalize( preg_replace( '/\s+/', ' ', $post->post_content ) ),
+	                            1000
+	                        );
+
+          // Add filters
+					$description = apply_filters( 'aioseop_description', $description );
+					// Add placholders
+          
+          $settings["{$prefix}title"]['placeholder'] = $title;
 					$settings["{$prefix}desc"]['placeholder']  = $description;
 				}
 				if ( isset( $current[ $prefix . 'setmeta' ] ) && $current[ $prefix . 'setmeta' ] ) {
@@ -879,6 +902,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 		 *
 		 * @since 1.0.0
 		 * @since 2.3.11.5 Support for multiple fb_admins.
+		 * @since 2.3.13   Adds filter:aioseop_description on description.
 		 */
 		function add_meta() {
 			global $post, $aiosp, $aioseop_options, $wp_query;
@@ -1198,6 +1222,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 				$twitter_thumbnail = set_url_scheme( $metabox['aioseop_opengraph_settings_customimg_twitter'] );
 			}
 
+			// Apply last filters.
+			$description = apply_filters( 'aioseop_description', $description );
+
 			$meta = Array(
 				'facebook' => Array(
 					'title'          => 'og:title',
@@ -1258,12 +1285,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 						 * This is to accomodate multiple fb:admins on separate lines.
 						 * @TODO Eventually we'll want to put this in its own function so things like images work too.
 						 */
-						if( 'key' === $k ){
+						if ( 'key' === $k ){
 							$fbadmins = explode( ',', str_replace(' ', '', $filtered_value[0] ) ); // Trim spaces then turn comma-separated values into an array.
 							foreach( $fbadmins as $fbadmin){
 								echo '<meta ' . $tags[ $t ]['name'] . '="' . $v . '" ' . $tags[ $t ]['value'] . '="' . $fbadmin . '" />' . "\n";
 							}
-						}else{
+						} else {
 							// For everything else.
 							foreach ( $filtered_value as $f ) {
 								echo '<meta ' . $tags[ $t ]['name'] . '="' . $v . '" ' . $tags[ $t ]['value'] . '="' . $f . '" />' . "\n";
@@ -1341,7 +1368,7 @@ END;
 				'filter_metabox_options',
 			), 10, 3 );
 			$post_types                                        = $this->get_post_type_titles();
-			$rempost                                           = array( 'revision' => 1, 'nav_menu_item' => 1 );
+			$rempost = array( 'revision' => 1, 'nav_menu_item' => 1, 'custom_css' => 1, 'customize_changeset' => 1 );
 			$post_types                                        = array_diff_key( $post_types, $rempost );
 			$this->default_options['types']['initial_options'] = $post_types;
 			foreach ( $post_types as $slug => $name ) {
