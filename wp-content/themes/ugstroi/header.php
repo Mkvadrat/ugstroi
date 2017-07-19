@@ -17,7 +17,6 @@ Version: 1.0
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo ug_stroi_wp_title('','', true, 'right'); ?></title>
 		<base href="#">
-                <link rel="shortcut icon" href="/wp-content/uploads/2017/07/favicon.jpg" type="image/x-icon">
 		<!-- Bootstrap -->
 		<link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/reset.css">

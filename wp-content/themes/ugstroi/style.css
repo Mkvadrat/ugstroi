@@ -31,7 +31,7 @@ abbr[title], acronym[title] {
 /*----- start templates -----*/
 body {
   font-family: "MyriadPro"; }
-
+strong { font-weight: 800; }
 .h2-title {
   font-size: 30px;
   font-weight: 400;
@@ -919,7 +919,11 @@ body {
     .reviews-page .projects-list li .info-block,
     .page-404 .projects-list li .info-block {
       overflow: hidden;
-      padding-left: 20px; }
+      padding-left: 20px;
+     }
+.projects-page .projects-list li .info-block { 
+height: 158px;
+}
     .projects-page .projects-list li h3,
     .news-page .projects-list li h3,
     .reviews-page .projects-list li h3,

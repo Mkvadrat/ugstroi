@@ -80,7 +80,6 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 
 			$system_status = array(
 				'status' => array( 'default' => '', 'type' => 'html', 'label' => 'none', 'save' => false ),
-				'send_email' => array( 'default' => '', 'type' => 'html', 'label' => 'none', 'save' => false ),
 			);
 
 			$this->layout['system_status'] = array(
@@ -152,7 +151,6 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 
 		function settings_page_init() {
 			$this->default_options['status']['default'] = $this->get_serverinfo();
-			$this->default_options['send_email']['default'] = $this->get_email_input();
 		}
 
 		function menu_order() {
@@ -230,15 +228,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 				$ms = __( 'N/A', 'all-in-one-seo-pack' );
 			}
 
-			$siteurl        = get_option( 'siteurl' );
-			$homeurl        = get_option( 'home' );
-			$db_version     = get_option( 'db_version' );
-			$site_title     = get_bloginfo( 'name' );
-			$language       = get_bloginfo( 'language' );
-			$front_displays = get_option( 'show_on_front' );
-			$page_on_front  = get_option( 'page_on_front' );
-			$blog_public    = get_option( 'blog_public' );
-			$perm_struct    = get_option( 'permalink_structure' );
+			$siteurl    = get_option( 'siteurl' );
+			$homeurl    = get_option( 'home' );
+			$db_version = get_option( 'db_version' );
 
 			$debug_info                   = array(
 				__( 'Operating System', 'all-in-one-seo-pack' )            => PHP_OS,
@@ -261,11 +253,6 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 				__( 'WordPress DB Version', 'all-in-one-seo-pack' )        => $db_version,
 				__( 'Multisite', 'all-in-one-seo-pack' )                   => $ms,
 				__( 'Active Theme', 'all-in-one-seo-pack' )                => $theme['Name'] . ' ' . $theme['Version'],
-				__( 'Site Title', 'all-in-one-seo-pack' )                  => $site_title,
-				__( 'Site Language', 'all-in-one-seo-pack' )               => $language,
-				__( 'Front Page Displays', 'all-in-one-seo-pack' )         => $front_displays === 'page' ? $front_displays . ' [ID = ' . $page_on_front . ']' : $front_displays,
-				__( 'Search Engine Visibility', 'all-in-one-seo-pack' )    => $blog_public,
-				__( 'Permalink Setting', 'all-in-one-seo-pack' )           => $perm_struct,
 			);
 			$debug_info['Active Plugins'] = null;
 			$active_plugins               = $inactive_plugins = array();
@@ -295,10 +282,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			}
 
 			do {
-				if ( ! empty( $_REQUEST['sfwd_debug_submit'] ) ) {
+				if ( ! empty( $_REQUEST['sfwd_debug_submit'] ) || ! empty( $_REQUEST['sfwd_update_check'] ) ) {
 					$nonce = $_REQUEST['sfwd_debug_nonce'];
 					if ( ! wp_verify_nonce( $nonce, 'sfwd-debug-nonce' ) ) {
 						echo "<div class='sfwd_debug_error'>" . __( 'Form submission error: verification check failed.', 'all-in-one-seo-pack' ) . '</div>';
+						break;
+					}
+					if ( $_REQUEST['sfwd_update_check'] ) {
+						global $aioseop_update_checker;
+						$aioseop_update_checker->checkForUpdates();
+						echo "<div class='sfwd_debug_mail_sent'>" . sprintf( __( '%s has checked for updates.', 'all-in-one-seo-pack' ), AIOSEOP_PLUGIN_NAME ) . '</div>';
 						break;
 					}
 					$email = '';
@@ -306,32 +299,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 						$email = sanitize_email( $_REQUEST['sfwd_debug_send_email'] );
 					}
 					if ( $email ) {
-						$attachments = array();
-						$upload_dir = wp_upload_dir();
-						$dir = $upload_dir['basedir'] . '/aiosp-log/';
-						if ( wp_mkdir_p( $dir ) ) {
-							$file_path = $dir . 'settings_aioseop-' . date( 'Y-m-d' ) . '-' . time() . '.ini';
-							if ( ! file_exists( $file_path ) ) {
-								if ( $file_handle = @fopen( $file_path, 'w' ) ) {
-									global $aiosp;
-									$buf = '; ' . __(
-											'Settings export file for All in One SEO Pack', 'all-in-one-seo-pack'
-										) . "\n";
-
-									// Adds all settings and posts data to settings file
-									add_filter( 'aioseop_export_settings_exporter_post_types', array( $this, 'get_exporter_post_types' ) );
-									add_filter( 'aioseop_export_settings_exporter_choices', array( $this, 'get_exporter_choices' ) );
-
-									$buf = $aiosp->settings_export( $buf );
-									$buf = apply_filters( 'aioseop_export_settings', $buf );
-									fwrite( $file_handle, $buf );
-									fclose( $file_handle );
-									$attachments[] = $file_path;
-								}
-							}
-						}
-
-						if ( wp_mail( $email, sprintf( __( 'SFWD Debug Mail From Site %s.', 'all-in-one-seo-pack' ), $siteurl ), $mail_text, '', $attachments ) ) {
+						if ( wp_mail( $email, sprintf( __( 'SFWD Debug Mail From Site %s.', 'all-in-one-seo-pack' ), $siteurl ), $mail_text ) ) {
 							echo "<div class='sfwd_debug_mail_sent'>" . sprintf( __( 'Sent to %s.', 'all-in-one-seo-pack' ), $email ) . '</div>';
 						} else {
 							echo "<div class='sfwd_debug_error'>" . sprintf( __( 'Failed to send to %s.', 'all-in-one-seo-pack' ), $email ) . '</div>';
@@ -341,36 +309,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 					}
 				}
 			} while ( 0 ); // Control structure for use with break.
-			$buf   = "<ul class='sfwd_debug_settings'>\n{$page_text}\n</ul>\n";
-
-			return $buf;
-		}
-
-		function get_email_input() {
 			$nonce = wp_create_nonce( 'sfwd-debug-nonce' );
-			$buf   = '<input name="sfwd_debug_send_email" type="text" value="" placeholder="' . __( 'E-mail debug information', 'all-in-one-seo-pack' ) . '"><input name="sfwd_debug_nonce" type="hidden" value="' .
+			$buf   = "<ul class='sfwd_debug_settings'>\n{$page_text}\n</ul>\n<p>\n" .
+			         '<input name="sfwd_debug_send_email" type="text" value="" placeholder="' . __( 'E-mail debug information', 'all-in-one-seo-pack' ) . '"><input name="sfwd_debug_nonce" type="hidden" value="' .
 			         $nonce . '"><input name="sfwd_debug_submit" type="submit" value="' . __( 'Submit', 'all-in-one-seo-pack' ) . '" class="button-primary">';
+
+			if ( AIOSEOPPRO ) {
+				$buf .= '<p><input name="sfwd_update_check" type="submit" value="' . __( 'Check For Updates', 'all-in-one-seo-pack' ) . '" class="button-primary">';
+			}
+
 			return $buf;
-		}
-
-		function get_exporter_choices() {
-			return array( 1, 2 );
-		}
-
-		function get_exporter_post_types() {
-			$post_types = $this->get_post_type_titles();
-			$rempost    = array(
-				'customize_changeset' => 1,
-				'custom_css'          => 1,
-				'revision'            => 1,
-				'nav_menu_item'       => 1,
-			);
-			$post_types = array_diff_key(
-				$post_types,
-				$rempost
-			);
-
-			return array_keys( $post_types );
 		}
 	}
 }

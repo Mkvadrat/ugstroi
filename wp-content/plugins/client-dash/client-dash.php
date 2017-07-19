@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Client Dash
  * Description: Creating a more intuitive admin interface for clients.
- * Version: 1.6.20
+ * Version: 1.6.14
  * Author: Kyle Maurer & Joel Worsham
  * Author URI: http://realbigmarketing.com
  * Plugin URI: http://clientdash.io
@@ -34,7 +34,7 @@ class ClientDash extends ClientDash_Functions {
 	 *
 	 * @since Client Dash 1.5
 	 */
-	protected static $version = '1.6.20';
+	protected static $version = '1.6.14';
 
 	/**
 	 * The path to the plugin.
@@ -616,13 +616,6 @@ class ClientDash extends ClientDash_Functions {
 		foreach ( $wp_meta_boxes['dashboard'] as $context => $priorities ) {
 			foreach ( $priorities as $priority => $widgets ) {
 				foreach ( $widgets as $id => $values ) {
-
-                    // Prevent some weirdness with "empty" or "disabled" widgets.
-					if ( empty( $values ) ) {
-
-						continue;
-					}
-
 					$this->active_widgets[ $id ]['title']    = $values['title'];
 					$this->active_widgets[ $id ]['context']  = $context;
 					$this->active_widgets[ $id ]['priority'] = $priority;
@@ -914,7 +907,7 @@ class ClientDash extends ClientDash_Functions {
 					<?php
 					printf(
 						__( 'It seems that there are either new roles, or some roles have been deleted, or the roles ' .
-						    'have been modified in some other way. Please visit the %sDisplay Settings%s and confirm ' .
+						    'have been modified in some other way. Please visit the %sDisplay Settings% and confirm ' .
 						    'that the role display settings are still to your liking. (this message will go away ' .
 						    'once you hit "Save Changes" on the display settings page).', 'client-dash' ),
 						'<a href="' . $this->get_settings_url( 'display' ) . '">',

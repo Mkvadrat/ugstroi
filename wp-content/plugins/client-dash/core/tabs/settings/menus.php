@@ -156,7 +156,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 			),
 		),
 		'Links'      => array(
-			'url'        => 'edit-tags.php?taxonomy=link_category',
+			'url'        => 'link-manager.php',
 			'icon'       => 'dashicons-admin-links',
 			'capability' => 'manage_links',
 			'submenus'   => array(
@@ -195,7 +195,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 			'capability' => 'edit_posts',
 			'submenus'   => array(
 				'All Comments' => array(
-					'url'        => 'edit-comments.php',
+					'url'        => 'index.php',
 					'capability' => 'edit_posts',
 				),
 			),
@@ -412,7 +412,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 		add_filter( 'wp_get_nav_menus', array( $this, 'hide_cd_nav_menu' ) );
 
 		// Use custom walker menu for displaying sortable menu items
-		add_filter( 'wp_edit_nav_menu_walker', array( $this, 'return_new_walker_menu' ), 1000, 2 );
+		add_filter( 'wp_edit_nav_menu_walker', array( $this, 'return_new_walker_menu' ), 10, 2 );
 
 		// Filters the modified menu item when returned
 		add_filter( 'wp_setup_nav_menu_item', array( $this, 'modify_menu_item' ) );
@@ -949,7 +949,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 	 *
 	 * @return string The new Walker class.
 	 */
-	public function return_new_walker_menu( $walker, $menu = null ) {
+	public function return_new_walker_menu( $walker, $menu ) {
 
 		if ( ! $menu ) {
 			return $walker;
@@ -1319,9 +1319,9 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 					$menu_item->title = sprintf( __( 'Comments %s' ), "<span class='awaiting-mod count-$awaiting_mod'><span class='pending-count'>" . number_format_i18n( $awaiting_mod ) . "</span></span>" );
 				}
 
-				if ( $menu_item->cd_type === 'separator' ) {
+				if ( strpos( $menu_item->url, 'separator' ) !== false ) {
 
-				    // If a separator
+					// If a separator
 					$menu[ $menu_item->menu_order ] = array(
 						'',
 						'read',
@@ -1959,7 +1959,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
                     <div id="cd-nav-menu-statuses" class="accordion-container">
                         <div class="control-section accordion-section  open add-post-types" id="add-post-types">
                             <h3 class="accordion-section-title">
-								<?php _e( 'Menu Statuses', 'client-dash' ); ?>
+                                <?php _e( 'Menu Statuses', 'client-dash' ); ?>
                             </h3>
 
                             <div class="accordion-section-content ">
@@ -2056,7 +2056,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
                                                             value="<?php echo $role_ID; ?>"
 														<?php selected( $this->role, $role_ID ); ?>>
 														<?php echo $role_ID == 'administrator' ? $role['name'] . ' ' .
-														                                         __( '(that\'s you!)', 'client-dash' ) : $role['name']; ?>
+                                                                                                 __( '(that\'s you!)', 'client-dash' ) : $role['name']; ?>
                                                     </option>
 													<?php
 												}
@@ -2071,7 +2071,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
                                                 <input type="hidden" name="import_items" value="0"/>
                                                 <input type="checkbox" id="import_items" name="import_items" value="1"
                                                        checked/>
-												<?php _e( 'Import role\'s existing menu items?', 'client-dash' ); ?>
+                                                <?php _e( 'Import role\'s existing menu items?', 'client-dash' ); ?>
                                             </label>
 										<?php endif; ?>
                                     </label>
@@ -2128,9 +2128,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
                                         <div class="creating-nav-menu">
                                             <p><?php _e( 'The menu is being created. This may take some time.', 'client-dash' ); ?></p>
 
-                                            <p>
-                                                <strong><?php _e( 'Please do NOT leave this page.', 'client-dash' ); ?></strong>
-                                            </p>
+                                            <p><strong><?php _e( 'Please do NOT leave this page.', 'client-dash' ); ?></strong></p>
 
                                             <div class="cd-progress-bar">
                                                 <div class="cd-progress-bar-inner"></div>
