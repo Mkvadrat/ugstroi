@@ -1,0 +1,343 @@
+/* Tabs
+   ========================================================================== */
+.wp-clearfy-tab {
+    display: none;
+}
+
+.wp-clearfy-tab.active {
+    display: block;
+}
+
+
+/* Top links
+   ========================================================================== */
+.clearfy-recommend {
+    color: #179347;
+    font-size: .8em;
+}
+
+.wp-clearfy-tab p.description {
+    padding-left: 25px;
+    font-size: 13px;
+    font-style: normal;
+    margin: .7em 0;
+}
+
+.wp-clearfy-tab label {
+    font-size: 14px;
+}
+
+.pseudo-button {
+    display: inline-block;
+    border: 2px solid #6da8e1;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+.pseudo-button:hover {
+    background: #6da8e1;
+    color: #fff;
+}
+.pseudo-button__green {
+    border-color: #00C76D;
+}
+.pseudo-button__green:hover {
+    background: #00C76D;
+}
+.pseudo-button__gray {
+    border-color: #77939f;
+    color: #999;
+}
+.pseudo-button__gray:hover {
+    background: #77939f;
+}
+p.description.danger {
+    color: #dd2b19;
+}
+.wpshopbiz-plugin-info {
+    float: right;
+}
+
+
+
+
+
+/* settings item
+   ========================================================================== */
+.clearfy-settings-item {
+
+}
+
+.clearfy-settings-item:after {
+    content: '';
+    display: table;
+    width: 100%;
+    height: 1px;
+    clear: both;
+}
+
+.clearfy-settings-item label {
+    width: 200px;
+    float: left;
+}
+
+.clearfy-settings-item p.description {
+    padding-left: 0;
+}
+
+.clearfy-fieldset {
+    margin-bottom: 20px;
+}
+
+.clearfy-fieldset p.description {
+    padding-left: 61px;
+}
+
+
+
+
+/* ==========================================================================
+   Changelog
+   ========================================================================== */
+.clearfy-changelog {
+    padding: 20px 15px;
+    border-left: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.clearfy-changelog__item {
+    position: relative;
+    padding-left: 60px;
+}
+
+.clearfy-changelog__item:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -23px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.clearfy-changelog__version {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+/********************************************************************
+ * Layout
+ *******************************************************************/
+.wpshop * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wpshop-cols {
+
+}
+
+.wpshop-cols:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wpshop-col-left {
+    width: 75%;
+    float: left;
+}
+
+.wpshop-col-right {
+    width: 20%;
+    float: right;
+    padding-top: 50px;
+}
+
+
+/********************************************************************
+ * Widgets
+ */
+
+.wpshop-widget {
+    margin-bottom: 35px;
+}
+
+.wpshop-widget-news {
+
+}
+
+.wpshop-widget-news ul li {
+    margin-bottom: 15px;
+}
+
+
+/********************************************************************
+ * Tabs
+ *******************************************************************/
+
+.wpshop-tab-wrapper {
+    margin: 0;
+    padding-top: 9px;
+    padding-bottom: 0;
+    line-height: inherit;
+}
+
+.wpshop-tab-wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wpshop-tab {
+    float: left;
+    border-bottom: none;
+    padding: 7px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    background: #fbfbfb;
+    color: #777;
+    text-decoration: none;
+    margin-right: 7px;
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,.05);
+    border-top: 2px solid #ccc;
+    border-bottom: 1px solid #e6e6e6;
+    outline: none;
+}
+
+.wpshop-tab:focus,
+.wpshop-tab:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.wpshop-tab-active {
+    background: #fff;
+    color: #000;
+    box-shadow: none;
+    border-top: 2px solid #ffc93d;
+    border-bottom: 1px solid #fff;
+}
+
+
+.wpshop-tab-in {
+    display: none;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+.wpshop-tab-in.active {
+    display: block;
+}
+
+
+/********************************************************************
+ * Instruction
+ *******************************************************************/
+.wpshop-instruction {
+    position: relative;
+    border: 2px solid #83c9c8;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.wpshop-instruction-expand {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #83c9c8;
+    border-bottom: 2px solid #83c9c8;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.wpshop-instruction-header {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.wpshop-instruction-body {
+    display: none;
+    padding-top: 10px;
+}
+
+.wpshop-instruction-body p {
+    margin: 15px 0 ;
+}
+
+
+/********************************************************************
+ * Settings
+ *******************************************************************/
+
+.wpshop-settings-item {
+    margin: 20px 0;
+}
+
+.wpshop-settings-item:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wpshop-settings-item label {
+    float: left;
+    width: 200px;
+    padding-top: 5px;
+}
+
+.wpshop-settings-item-body {
+    float: left;
+}
+
+
+
+
+
+
+.clearfy fieldset .description {
+    padding-left: 25px;
+    margin: .4em 0;
+}
+
+.clearfy .robots-text {
+    padding-left: 25px;
+}
+
+.clearfy .robots-text textarea {
+    display: block;
+    width: 100%;
+    height: 160px;
+}
+
+.clearfy .last-modified-text {
+    padding-left: 25px;
+}
+
+.clearfy .last-modified-text textarea {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+.clearfy .last-modified-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.clearfy .last-modified-text .description {
+    padding-left: 0;
+}

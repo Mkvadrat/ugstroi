@@ -7,6 +7,24 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+
+	.certificate {
+		display: inline-block;
+		position: relative;
+		bottom: 0;
+		right: 0;
+		margin-top: 20px;
+	}
+
+	.header .header-content .first-par,
+	.header .header-content .second-par {
+		padding-left: 0;
+	}
+
+	.header .header-content .header-button {
+		margin-left: 0;
+	}
+	
 	.header .menu {
 		margin: 50px 0;
 	}

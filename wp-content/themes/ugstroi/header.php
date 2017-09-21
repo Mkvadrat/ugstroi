@@ -81,16 +81,16 @@ Version: 1.0
             <div class="row">
                 <div class="col-md-3">
 					<a class="logo-title" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<h1><img
+						<p><img
 						  src="<?php header_image(); ?>"
 						  height="<?php echo get_custom_header()->height; ?>"
 						  width="<?php echo get_custom_header()->width; ?>"
 						  alt="logotype"
-						/></h1>
+						/></p>
 					</a>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="h4-title-header"><?php echo getMeta('slogan_main_page'); ?></h4>
+                    <p class="h4-title-header"><?php echo getMeta('slogan_main_page'); ?></p>
                 </div>
                 <div class="col-md-5">
                     <address>
@@ -100,11 +100,14 @@ Version: 1.0
                     </address>
                 </div>
 
-                <div class="col-md-3-offset"></div>
-                <div class="col-md-7 header-content">
+                <!-- <div class="col-md-3-offset"></div> -->
+                <div class="col-md-12 header-content">
                     <?php echo getMeta('banner_main_page'); ?>
                 </div>
-                <div class="col-md-2-offset"></div>
+                <div class="col-md-12">
+                	<a href="http://www.sro-mots.ru" class="certificate" target="_blank"><img src="http://ugstroi.com/wp-content/themes/ugstroi/images/sro.png" alt=""></a>
+                </div>
+                <!-- <div class="col-md-2-offset"></div> -->
 
                 <div class="col-md-12">
                     <nav class="menu">

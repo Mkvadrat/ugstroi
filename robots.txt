@@ -1,4 +1,5 @@
 User-agent: *
+Crawl-delay: 40
 Disallow: /wp-admin
 Disallow: /wp-includes
 Disallow: /wp-content/plugins

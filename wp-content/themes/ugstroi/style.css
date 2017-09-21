@@ -115,20 +115,22 @@ strong { font-weight: 800; }
     .header .header-content p {
       padding: 0; }
     .header .header-content .first-par {
-      font-size: 48px;
+      padding-left: 243px;
+      font-size: 41px;
       font-weight: 400;
-      line-height: 52px;
+      line-height: 41px;
       color: #fff; }
     .header .header-content .second-par {
       font-size: 24px;
       font-weight: 400;
       line-height: 28px;
       color: #fff;
-      padding: 10px 210px 15px 0; }
+      padding: 10px 10px 15px 243px }
     .header .header-content .header-button {
       display: inline-block;
       padding: 5px 15px;
       border: 1px solid white;
+      margin-left: 243px;
       text-align: center;
       font-size: 18px;
       font-weight: 400;
@@ -2064,4 +2066,24 @@ font-size: 14px;
     padding-bottom: 20px;
     margin-left: 26px;
 list-style-type: disc;
+}
+
+.certificate {
+  position: absolute;
+  right: 15px;
+  bottom: -70px;
+}
+.h1-title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 34px;
+    color: #363852;
+    padding-bottom: 20px;
+}
+.modal-form-call {
+font-size: 30px;
+    font-weight: 400;
+    line-height: 34px;
+    color: #363852;
+    padding-bottom: 20px;
 }

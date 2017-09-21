@@ -26,13 +26,13 @@ get_header();
                     <!-- start main content -->
 
                     <main class="services-in-page">
-						<h2 class="h2-title"><?php the_title(); ?></h2>
+						<h1 class="h1-title"><?php the_title(); ?></h1>
 						
 						<?php if (have_posts()): while (have_posts()): the_post(); ?>
 							<?php the_content(); ?>
 						<?php endwhile; endif; ?>
 
-                        <h2 class="h2-title">Заказать услугу</h2>
+                        <!--<h3 class="h2-title">Заказать услугу</h3>-->
                         <p>Для заказа данной услуги воспользуйтесь формой </p>
 
                         <div class="form">

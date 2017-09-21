@@ -186,7 +186,7 @@ Version: 1.0
 
     <div class="hidden">
         <div class="modal-form" id="modal-form">
-            <h2 class="h2-title">Заказать обратный звонок</h2>
+            <h4 class="h2-title">Заказать обратный звонок</h4>
 
             <p>Оставте свой номер телефона и наши менеджеры перезвонят Вам</p>
             <div class="form">
@@ -195,7 +195,7 @@ Version: 1.0
                 <input type="submit" onclick="QuickForm();" value="Отправить">
             </div>
 
-            <p>Спасибо, запрос отпревлен, наши менеджеры свяжуться с Вами через 15 минут</p>
+            <p>Спасибо, запрос отправлен, наши менеджеры свяжутся с Вами через 15 минут</p>
         </div>
     </div>
 
@@ -240,5 +240,34 @@ Version: 1.0
 	</script>
 	
 	<?php wp_footer(); ?>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter45702921 = new Ya.Metrika({
+                    id:45702921,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/45702921" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

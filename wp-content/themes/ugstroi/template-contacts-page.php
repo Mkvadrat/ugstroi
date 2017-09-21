@@ -28,7 +28,7 @@ get_header();
                     <!-- start main content -->
 
                     <main class="contacts-page">
-                        <h2 class="h2-title"><?php the_title(); ?></h2>
+                        <h1 class="h2-title"><?php the_title(); ?></h1>
 
 						<?php if (have_posts()): while (have_posts()): the_post(); ?>
 							<?php the_content(); ?>
