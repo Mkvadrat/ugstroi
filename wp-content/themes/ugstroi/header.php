@@ -22,7 +22,7 @@ Version: 1.0
 		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/reset.css">
 		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/fonts.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	
+
 		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css">
 		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/media.css">
 	
@@ -36,6 +36,12 @@ Version: 1.0
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+		<!-- MMENU -->
+
+		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/demo.css">
+		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/jquery.mmenu.all.css">
+		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.mmenu.all.js"></script>
 		
 		<!-- SLICK-CAROUSEL -->
 		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/slick.min.js"></script>
@@ -75,11 +81,42 @@ Version: 1.0
 		
 	<body>
 
+	<div id="page">
+        <div class="header">
+            <a href="#menu"><span></span></a>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#contact">О нас</a></li>
+                <li><a href="#contact">Услуги</a></li>
+                <li><a href="#contact">Объекты</a>
+                	<ul>
+			            <li><a href="/about/history/">Фото текущих строек</a></li>
+			            <li><a href="/about/team/">Строительство домов</a></li>
+			            <li><a href="/about/address/">Ремонт квартир и домов</a></li>
+			            <li><a href="/about/address/">Мебель на заказ</a></li>
+			         </ul>
+                </li>
+                <li><a href="#contact">Проекты</a>
+                	<ul>
+			            <li><a href="/about/history/">Дизайн проекты</a></li>
+			            <li><a href="/about/team/">Эскизные проекты домов</a></li>
+			         </ul>
+                </li>
+                <li><a href="#contact">Отзывы</a></li>
+                <li><a href="#contact">Новости</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+
+
     <!-- start header -->
-    <header class="header">
+    <header class="header-page">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
+                	<div class="logo-block">
 					<a class="logo-title" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<p><img
 						  src="<?php header_image(); ?>"
@@ -88,6 +125,7 @@ Version: 1.0
 						  alt="logotype"
 						/></p>
 					</a>
+					</div>
                 </div>
                 <div class="col-md-4">
                     <p class="h4-title-header"><?php echo getMeta('slogan_main_page'); ?></p>
@@ -110,9 +148,9 @@ Version: 1.0
                 <!-- <div class="col-md-2-offset"></div> -->
 
                 <div class="col-md-12">
-                    <nav class="menu">
-                        <button type="button" class="menu-button hidden-md hidden-lg"><i class="fa fa-bars"></i></button>
-                        <!--<ul>
+                    <div class="menu-header">
+                        <!-- <button type="button" class="menu-button hidden-md hidden-lg"><i class="fa fa-bars"></i></button> -->
+                        <!-- <ul>
                             <li><a class="active" href="index.html">Главная</a></li>
                             <li><a href="about.html">О нас</a></li>
                             <li><a href="news.html">Новости</a></li>
@@ -133,7 +171,7 @@ Version: 1.0
                             </li>
                             <li><a href="reviews.html">Отзывы</a></li>
                             <li><a href="contacts.html">Контакты</a></li>
-                        </ul>-->
+                        </ul> -->
 						<?php
 							if (has_nav_menu('primary_menu')){
 								wp_nav_menu( array(
@@ -156,10 +194,12 @@ Version: 1.0
 								) );
 							}
 						?>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- end header -->
+
+   </div>

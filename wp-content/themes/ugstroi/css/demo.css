@@ -1,0 +1,46 @@
+nav:not(.mm-menu)
+{
+	display: none;
+}
+
+.header.fixed
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.footer.fixed
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.header a
+{
+	display: block;
+	width: 48px;
+	height: 18px;
+	padding: 11px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.header a:before,
+.header a:after
+{
+	content: '';
+	display: block;
+	background: #fff;
+	height: 2px;
+}
+.header a span
+{
+	background: #fff;
+	display: block;
+	height: 2px;
+	margin: 6px 0;
+}
+.content
+{
+	padding: 150px 50px 50px 50px;
+}

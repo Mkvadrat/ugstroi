@@ -35,4 +35,17 @@ $(document).ready(function() {
 		"hideOnContentClick" :false,
 		"centerOnScroll" : false
 	});
+
+	// MMENU
+
+    $(function() {
+        $('nav#menu').mmenu({
+        	extensions	: [ 'fx-listitems-slide', 'fx-panels-zoom', 'fx-listitems-slide', 'multiline', 'shadow-page', 'shadow-panels', 'listview-large', 'pagedim-black' ]
+        });
+    });
+
+    $(function() {
+    	$('#mm-1 .mm-title').text('Меню');
+    });
+    
 });

@@ -8,6 +8,19 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+	.header a {
+		display: block !important;
+	}
+
+	.menu-header {
+		display: none;
+	}
+
+	.header-page .logo-title {
+    	margin-left: auto;
+    	margin-right: auto;
+    }
+
 	.certificate {
 		display: inline-block;
 		position: relative;
@@ -16,67 +29,67 @@
 		margin-top: 20px;
 	}
 
-	.header .header-content .first-par,
-	.header .header-content .second-par {
+	.header-page .header-content .first-par,
+	.header-page .header-content .second-par {
 		padding-left: 0;
 	}
 
-	.header .header-content .header-button {
+	.header-page .header-content .header-button {
 		margin-left: 0;
 	}
 	
-	.header .menu {
+	.header-page .menu-header {
 		margin: 50px 0;
 	}
 
-	.header .menu ul {
+	.header-page .menu-header ul {
 		margin-top: 30px;
 		display: none;
 		height: auto;
 	}
 
-	.header .menu ul li {
+	.header-page .menu-header ul li {
 		display: block;
 	}
 
-	.header .menu ul li ul {
+	.header-page .menu-header ul li ul {
 		position: relative;
 		top: 0;
 		width: 96%;
 		margin: 10px auto;
 	}
 
-	.header .menu ul li ul li {
+	.header-page .menu-header ul li ul li {
 		text-align: center;
 	}
 
-	.header .menu ul li a::before {
+	.header-page .menu-header ul li a::before {
 		display: none;
 	}
 
-	.header .h4-title-header {
+	.header-page .h4-title-header {
 		padding: 0;
 		text-align: center;
 	}
 
-	.header address {
+	.header-page address {
 	    text-align: center;
 	}
 
-	.header .header-content {
+	.header-page .header-content {
 	    padding-top: 40px;
 	    text-align: center;
 	}
 
-	.header .header-content .second-par {
+	.header-page .header-content .second-par {
 		padding-right: 0;
 	}
 
-	.header .container {
+	.header-page .container {
 		background: none;
 	}
 
-	.header address p:nth-child(3) {
+	.header-page address p:nth-child(3) {
 		margin-top: 10px;
 	}
 
@@ -185,8 +198,8 @@
     	padding-bottom: 40px;
     }
 
-    .header .menu ul li:hover ul,
-    .header .menu ul li:hover ul:hover {
+    .header-page .menu-header ul li:hover ul,
+    .header-page .menu-header ul li:hover ul:hover {
     	display: none !important;
     }
 }
@@ -285,7 +298,7 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-	.header .menu ul {
+	.header-page .menu-header ul {
 		display: table !important;
 	}
 }

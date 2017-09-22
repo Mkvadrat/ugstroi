@@ -52,8 +52,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+  .header .logo-block {
+    overflow: hidden;
+  }
   .header .logo-title {
     display: block;
+    float: right;
     width: 110px;
     margin: 30px 0px 30px 20px; }
   .header .logo-title:hover img {

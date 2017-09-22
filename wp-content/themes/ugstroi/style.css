@@ -54,79 +54,82 @@ strong { font-weight: 800; }
 
 /*----- start templates -----*/
 /*----- start header -----*/
-.header .container {
+.header-page .container {
   background: url(images/header-man.png);
   background-repeat: no-repeat;
   background-position: left bottom; }
 
-.header {
+.header-page {
   background: #4d7192 url(images/bg-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
-  .header .logo-title {
+  .header-page .logo-block {
+    overflow: hidden;
+  }
+  .header-page .logo-title {
     display: block;
     width: 110px;
     margin: 30px 0px 30px 20px; }
-  .header .logo-title:hover img {
+  .header-page .logo-title:hover img {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
     -webkit-transition: 1s;
     transition: 1s; }
-  .header .logo-title:not(:hover) img {
+  .header-page .logo-title:not(:hover) img {
     -webkit-transition: 1s;
     transition: 1s; }
-  .header .h4-title-header {
+  .header-page .h4-title-header {
     font-size: 18px;
     font-weight: 700;
     line-height: 22px;
     color: #fff;
     padding: 40px 10px 30px 0; }
-  .header address {
+  .header-page address {
     text-align: right; }
-    .header address p:nth-child(1) {
+    .header-page address p:nth-child(1) {
       font-size: 14px;
       font-weight: 400;
       line-height: 18px;
       color: #fff;
       padding: 20px 0 10px; }
-    .header address p:nth-child(2) a {
+    .header-page address p:nth-child(2) a {
       font-size: 36px;
       font-weight: 700;
       line-height: 40px;
       color: #fff; }
-    .header address p:nth-child(3) {
+    .header-page address p:nth-child(3) {
       font-size: 14px;
       font-weight: 400;
       line-height: 18px;
       color: #fff;
       font-style: italic; }
-      .header address p:nth-child(3) a {
+      .header-page address p:nth-child(3) a {
         font-size: 14px;
         font-weight: 400;
         line-height: 18px;
         color: #fff;
         text-decoration: underline; }
-      .header address p:nth-child(3) a:hover {
+      .header-page address p:nth-child(3) a:hover {
         text-decoration: none; }
-  .header .header-content {
+  .header-page .header-content {
     padding-top: 70px; }
-    .header .header-content p {
+    .header-page .header-content p {
       padding: 0; }
-    .header .header-content .first-par {
+    .header-page .header-content .first-par {
       padding-left: 243px;
       font-size: 41px;
       font-weight: 400;
       line-height: 41px;
       color: #fff; }
-    .header .header-content .second-par {
+    .header-page .header-content .second-par {
       font-size: 24px;
       font-weight: 400;
       line-height: 28px;
       color: #fff;
       padding: 10px 10px 15px 243px }
-    .header .header-content .header-button {
+    .header-page .header-content .header-button {
       display: inline-block;
       padding: 5px 15px;
       border: 1px solid white;
@@ -137,27 +140,27 @@ strong { font-weight: 800; }
       line-height: 28px;
       color: #fff;
       text-decoration: none; }
-    .header .header-content .header-button:hover {
+    .header-page .header-content .header-button:hover {
       background: #fff;
       color: #000;
       border: 1px solid #6e6e6e;
       -webkit-transition: 0.5s;
       transition: 0.5s; }
-    .header .header-content .header-button:not(:hover) {
+    .header-page .header-content .header-button:not(:hover) {
       -webkit-transition: 0.5s;
       transition: 0.5s; }
-  .header .menu {
+  .header-page .menu-header {
     margin-top: 91px; }
-    .header .menu button {
+    .header-page .menu-header button {
       width: 40px;
       height: 40px;
       border: none;
       background-color: #a6efff;
     }
-    .header .menu button i {
+    .header-page .menu-header button i {
       font-size: 27px;
     }
-  .header .menu ul {
+  .header-page .menu-header ul {
     border-radius: 5px;
     border: 1px solid #4d89c6;
     box-shadow: 0 6px 3px rgba(4, 22, 34, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.18);
@@ -167,12 +170,12 @@ strong { font-weight: 800; }
     position: relative;
     width: 100%;
     height: 50px; }
-    .header .menu ul li {
+    .header-page .menu-header ul li {
       display: table-cell;
       text-align: center;
       vertical-align: middle;
       position: relative; }
-      .header .menu ul li a {
+      .header-page .menu-header ul li a {
         position: relative;
         display: block;
         padding: 15px 0%;
@@ -182,11 +185,11 @@ strong { font-weight: 800; }
         line-height: 22px;
         color: #fff;
         outline: none; }
-      .header .menu ul li a:hover,
-      .header .menu .current-menu-item {
+      .header-page .menu-header ul li a:hover,
+      .header-page .menu-header .current-menu-item {
         background-image: -webkit-linear-gradient(top, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%);
         background-image: linear-gradient(to bottom, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%); }
-      .header .menu ul li a:before {
+      .header-page .menu-header ul li a:before {
         content: "";
         width: 2px;
         height: 100%;
@@ -195,7 +198,7 @@ strong { font-weight: 800; }
         left: 0;
         background-image: -webkit-linear-gradient(left, #2974b2 0%, #3982b7 100%);
         background-image: linear-gradient(to right, #2974b2 0%, #3982b7 100%); }
-      .header .menu ul li ul {
+      .header-page .menu-header ul li ul {
         display: none !important;
         position: absolute;
         top: 52px;
@@ -204,11 +207,11 @@ strong { font-weight: 800; }
         z-index: 10;
         border-radius: 0;
         height: auto; }
-        .header .menu ul li ul li {
+        .header-page .menu-header ul li ul li {
           display: block;
           text-align: left;
           margin: 0 !important; }
-          .header .menu ul li ul li a {
+          .header-page .menu-header ul li ul li a {
             padding-left: 35px;
             padding-right: 20px;
             border: 1px solid #4d89c6;
@@ -221,25 +224,25 @@ strong { font-weight: 800; }
             color: #fff;
             text-shadow: 0 1px 0 #12527f;
             border-radius: 0 !important; }
-          .header .menu ul li ul li a:before {
+          .header-page .menu-header ul li ul li a:before {
             display: none; }
-    .header .menu ul li:hover ul,
-    .header .menu ul li:hover ul:hover {
+    .header-page .menu-header ul li:hover ul,
+    .header-page .menu-header ul li:hover ul:hover {
       display: block !important; }
-    .header .menu ul li:first-child a:before {
+    .header-page .menu-header ul li:first-child a:before {
       display: none; }
-    .header .menu ul li:first-child {
+    .header-page .menu-header ul li:first-child {
       margin-left: 0; }
-    .header .menu ul li:first-child a {
+    .header-page .menu-header ul li:first-child a {
       border-radius: 5px 0 0 5px; }
-    .header .menu ul li:last-child a {
+    .header-page .menu-header ul li:last-child a {
       border-radius: 0 5px 5px 0; }
 
 /*----- end header -----*/
 /*----- start header inside -----*/
-.header-inside .container {
+.header-page-inside .container {
   background-image: none; }
-  .header-inside .container .menu {
+  .header-page-inside .container .menu-header {
     margin-top: 0; }
 
 /*----- end header inside -----*/
@@ -2086,4 +2089,38 @@ font-size: 30px;
     line-height: 34px;
     color: #363852;
     padding-bottom: 20px;
+}
+
+.header a {
+  display: block !important;
+  width: 50px !important;
+  height: 43px !important;
+  top: 20px !important;
+  left: 20px !important;
+  display: none !important;
+  z-index: 1000;
+  border-radius: 5px;
+  border: 1px solid #4d89c6;
+  box-shadow: 0 6px 3px rgba(4, 22, 34, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.18);
+  background-image: -webkit-linear-gradient(bottom, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%);
+  background-image: linear-gradient(to top, #1d5887 0%, #3379b3 47%, #4786ba 53%, #4d9dd5 78%, #4894ca 100%);
+}
+
+.mm-menu {
+    background: #599fd1 !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: rgba(255,255,255,.8) !important;
+}
+
+.mm-listview > li,
+.mm-listview > li .mm-next,
+.mm-listview > li .mm-next::before,
+.mm-listview > li::after,
+.mm-menu .mm-listview > li .mm-next::after,
+.mm-menu .mm-btn::before {
+  border-color: rgba(255,255,255,.4) !important;
+}
+
+.mm-menu .mm-navbar a, .mm-menu .mm-navbar > * {
+    color: rgba(255,255,255,.8) !important;
 }
