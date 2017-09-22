@@ -86,28 +86,28 @@ Version: 1.0
             <a href="#menu"><span></span></a>
         </div>
         <nav id="menu">
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#contact">О нас</a></li>
-                <li><a href="#contact">Услуги</a></li>
-                <li><a href="#contact">Объекты</a>
-                	<ul>
-			            <li><a href="/about/history/">Фото текущих строек</a></li>
-			            <li><a href="/about/team/">Строительство домов</a></li>
-			            <li><a href="/about/address/">Ремонт квартир и домов</a></li>
-			            <li><a href="/about/address/">Мебель на заказ</a></li>
-			         </ul>
-                </li>
-                <li><a href="#contact">Проекты</a>
-                	<ul>
-			            <li><a href="/about/history/">Дизайн проекты</a></li>
-			            <li><a href="/about/team/">Эскизные проекты домов</a></li>
-			         </ul>
-                </li>
-                <li><a href="#contact">Отзывы</a></li>
-                <li><a href="#contact">Новости</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
+			<?php
+				if (has_nav_menu('primary_menu')){
+					wp_nav_menu( array(
+						'theme_location'  => 'primary_menu',
+						'menu'            => '',
+						'container'       => false,
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => '',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul>%3$s</ul>',
+						'depth'           => 2,
+						'walker'          => '',
+					) );
+				}
+			?>
         </nav>
 
 
