@@ -1749,7 +1749,8 @@ height: 158px;
       transition: 1s; }
     .services-in-page .list-galery p a:nth-child(3n) {
       margin-right: 0; }
-  .services-in-page .form {
+  .services-in-page .form,
+  .price-page .form {
     width: 420px
     /* FF 4-18 */
     /* FF 19+ */
@@ -1759,7 +1760,10 @@ height: 158px;
     /* IE 10+ */ }
     .services-in-page .form input[type="text"],
     .services-in-page .form input[type="tel"],
-    .services-in-page .form input[type="email"] {
+    .services-in-page .form input[type="email"],
+    .price-page .form input[type="text"],
+    .price-page .form input[type="tel"],
+    .price-page .form input[type="email"] {
       display: block;
       padding: 6px 10px;
       width: 194px;
@@ -1772,7 +1776,8 @@ height: 158px;
       color: #b5b5b5;
       font-style: italic;
       margin-bottom: 12px; }
-    .services-in-page .form input[type="submit"] {
+    .services-in-page .form input[type="submit"],
+    .price-page .form input[type="submit"] {
       float: right;
       margin-top: -37px;
       margin-right: 103px;
@@ -1784,9 +1789,12 @@ height: 158px;
       text-decoration: underline;
       background: transparent;
       border: none; }
-    .services-in-page .form input[type="submit"]:hover {
+      .price-page .form input[type="submit"] {margin-right: 65px;}
+    .services-in-page .form input[type="submit"]:hover,
+    .price-page .form input[type="submit"]:hover {
       text-decoration: none; }
-    .services-in-page .form textarea {
+    .services-in-page .form textarea,
+    .price-page .form textarea {
       float: right;
       margin-top: -120px;
       width: 194px;
@@ -1816,7 +1824,24 @@ height: 158px;
       color: transparent; }
     .services-in-page .form textarea:focus:-ms-input-placeholder {
       color: transparent; }
-  .services-in-page .list-page {
+
+      .price-page .form input:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .price-page .form input:focus:-moz-placeholder {
+      color: transparent; }
+    .price-page .form input:focus::-moz-placeholder {
+      color: transparent; }
+    .price-page .form input:focus:-ms-input-placeholder {
+      color: transparent; }
+    .price-page .form textarea:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .price-page .form textarea:focus:-moz-placeholder {
+      color: transparent; }
+    .price-page .form textarea:focus::-moz-placeholder {
+      color: transparent; }
+    .price-page .form textarea:focus:-ms-input-placeholder {
+      color: transparent; }
+  .price-page .list-page {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2124,3 +2149,254 @@ font-size: 30px;
 .mm-menu .mm-navbar a, .mm-menu .mm-navbar > * {
     color: rgba(255,255,255,.8) !important;
 }
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*--------------------- 25.09.2017 --------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+
+.bg-content .main-page .top-block-main-page p {
+  padding-bottom: 20px;
+}
+
+.bg-content .main-page .top-block-main-page p:last-of-type {
+  padding-bottom: 0;
+}
+
+.construction-prices {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #e54242;
+  background-image: linear-gradient(to top, #8e342d 0%, #b14237 45%, #bc4b4b 51%, #d15050 74%, #cb5a5a 100%);
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.construction-prices:hover {
+    color: white;
+    background-image: linear-gradient( 90deg, rgb(203,90,90) 0%, rgb(209,80,80) 26%, rgb(188,75,75) 49%, rgb(177,66,55) 55%, rgb(142,52,45) 100%);
+}
+
+/* start main-price-page */
+
+.price-page {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px rgba(4, 22, 34, 0.1);
+  padding: 50px 40px;
+  margin-bottom: 30px;
+}
+
+.price-page p {
+  padding-bottom: 20px;
+}
+
+.price-page p strong {
+  font-weight: 700;
+}
+
+.price-page p i {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.price-page h2 {
+  margin-bottom: 0;
+}
+
+.price-page .divider {
+  height: 1px;
+  margin: 10px 0 25px;
+  background: #c6c7c8;
+}
+
+.price-page .equipment-block {
+  position: relative;
+  margin-top: -40px;
+}
+
+.price-page .equipment-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.price-page .equipment-title {
+  position: relative;
+  color: #363852;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-left: 26px;
+  padding-bottom: 20px;
+}
+
+.price-page .equipment-title .number {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  color: #363852;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.price-page .equipment-title .name {
+  display: block;
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+.price-page .photo-block,
+.price-page .description-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.price-page .photo-block {
+  width: 30%;
+  margin-right: 25px;
+}
+
+.price-page .photo-block img {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+}
+
+.price-page .photo-block img:first-child {
+  margin-top: 35px;
+}
+
+.price-page .photo-block .price {
+  padding-top: 5px;
+  color: #363852;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.price-page .photo-block .price span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.price-page .description-block {
+  width: 65%;
+}
+
+.price-page .description-block .title-list {
+  position: relative;
+  padding: 5px 0 20px 40px;
+  color: #363852;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.price-page .description-block .title-list::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  background-image: url(images/sprite.png);
+  background-repeat: no-repeat;
+}
+
+.price-page .description-block .title-list.foundation::before {
+  top: 8px;
+  width: 29px;
+  height: 12px;
+  background-position: -5px -252px;
+}
+
+.price-page .description-block .title-list.floor::before {
+  top: 1px;
+  width: 21px;
+  height: 21px;
+  background-position: -38px -249px;
+}
+
+.price-page .description-block .title-list.roof::before {
+  top: 2px;
+  width: 33px;
+  height: 17px;
+  background-position: -63px -251px;
+}
+
+.price-page .description-block .title-list.more::before {
+  top: 2px;
+  width: 31px;
+  height: 31px;
+  background-position: -102px -250px;
+}
+
+.price-page .description-block ul {
+  padding-bottom: 25px;
+}
+
+.price-page .description-block ul li {
+  position: relative;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  color: #363852;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.price-page .description-block ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  display: block;
+  width: 3px;
+  height: 3px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #363852;
+}
+
+.price-page .list-page {
+  margin-top: 30px;
+}
+
+.price-page .list-page li {
+  width: 33%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #363852;
+}
+
+.price-page .list-page li a {
+  font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* http://ugstroi.loc/ceny-na-uslugi/ */
