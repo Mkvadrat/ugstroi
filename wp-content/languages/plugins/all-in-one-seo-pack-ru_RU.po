@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - All in One SEO Pack - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-08-05 19:04:01+0000\n"
+"PO-Revision-Date: 2017-08-29 21:58:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,22 +11,75 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: Plugins - All in One SEO Pack - Stable (latest release)\n"
 
-#: aioseop_class.php:116 aioseop_class.php:131 aioseop_class.php:175
-#: aioseop_class.php:3138
-msgid "%post_month% - The current date (localized)"
-msgstr "%post_month% - Текущая дата (локализовано)"
+#: modules/aioseop_opengraph.php:110
+msgid "Select the Twitter Card type to use for this Page or Post, overriding the default setting."
+msgstr "Выберите тип Twitter Card для этой записи/страницы, переопределяя настройку по умолчанию."
 
-#: aioseop_class.php:115 aioseop_class.php:130 aioseop_class.php:174
-#: aioseop_class.php:3137
-msgid "%post_year% - The current date (localized)"
-msgstr "%post_year% - Текущая дата (локализовано)"
+#: modules/aioseop_feature_manager.php:34
+msgid "Add Social Meta data to your site to deliver closer integration between your website/blog and social media."
+msgstr "Добавить социальные метаданные к вашему сайту для большей интеграции его с социальными сетями."
 
-#: aioseop_class.php:114 aioseop_class.php:129 aioseop_class.php:173
-#: aioseop_class.php:3136
-msgid "%post_date% - The current date (localized)"
-msgstr "%post_date% - Текущая дата (локализовано)"
+#: inc/commonstrings.php:53
+msgid "Your license has expired. Please %1$s click here %2$s to purchase a new one."
+msgstr "Ваша лицензия истекла. Пожалуйста, %1$s нажмите здесь %2$s чтобы приобрести новую."
 
-#: admin/aioseop_module_class.php:2225
+#: inc/commonstrings.php:52
+msgid "There is a new version of %s available. Go to <a href='%s'>the plugins page</a> for details."
+msgstr "Доступна новая версия %s. Перейдите на <a href='%s'>страницу плагина</a> для детальной информации."
+
+#: inc/commonstrings.php:49
+msgid "You must <a href=\"%s\">enter a valid License Key</a> for it to work."
+msgstr "Вам требуется <a href=\"%s\">ввести верный лицензионный ключ</a> для работы."
+
+#: inc/commonstrings.php:48
+msgid "%s is almost ready."
+msgstr "%s почти готово."
+
+#: aioseop_class.php:985
+msgid "NOFOLLOW this page/post"
+msgstr "NOFOLLOW  эту страницу/запись"
+
+#: aioseop_class.php:981
+msgid "NOINDEX this page/post"
+msgstr "NOINDEX эту страницу/запись"
+
+#: aioseop_class.php:175
+msgid "%post_month% - The month the page/post was published (localized)"
+msgstr "%post_month% - Месяц публикации страницы/записи (локализовано)"
+
+#: aioseop_class.php:174
+msgid "%post_year% - The year the page/post was published (localized)"
+msgstr "%post_year% - Год публикации страницы/записи (локализовано)"
+
+#: aioseop_class.php:173
+msgid "%post_date% - The date the page/post was published (localized)"
+msgstr "%post_date% - Дата публикации страницы/записи (локализовано)"
+
+#: aioseop_class.php:131 aioseop_class.php:3150
+msgid "%post_month% - The month the post was published (localized)"
+msgstr "%post_month% - Месяц публикации записи (локализовано)"
+
+#: aioseop_class.php:130 aioseop_class.php:3149
+msgid "%post_year% - The year the post was published (localized)"
+msgstr "%post_year% - Год публикации записи (локализовано)"
+
+#: aioseop_class.php:129 aioseop_class.php:3148
+msgid "%post_date% - The date the post was published (localized)"
+msgstr "%post_date% - Дата публикации записи (локализовано)"
+
+#: aioseop_class.php:116
+msgid "%post_month% - The month the page was published (localized)"
+msgstr "%post_month% - Месяц публикации страницы (локализовано)"
+
+#: aioseop_class.php:115
+msgid "%post_year% - The year the page was published (localized)"
+msgstr "%post_year% - Год публикации страницы (локализовано)"
+
+#: aioseop_class.php:114
+msgid "%post_date% - The date the page was published (localized)"
+msgstr "%post_date% - Дата публикации страницы (локализовано)"
+
+#: admin/aioseop_module_class.php:2239
 msgid "Upload Image"
 msgstr "Загрузить изображение"
 
@@ -34,7 +87,7 @@ msgstr "Загрузить изображение"
 msgid "Feature Request/Bug Report"
 msgstr "Запрос функционала/Сообщить об ошибке"
 
-#: modules/aioseop_opengraph.php:416
+#: modules/aioseop_opengraph.php:419
 msgid "Enable Facebook Meta for Post Types"
 msgstr "Включить Facebook Meta для типов записей"
 
@@ -66,10 +119,10 @@ msgstr "Отметьте и Meta Descriptions для всех типов ваш�
 msgid "%description% - This outputs the description you write for each page/post or the autogenerated description, if you have that option enabled. Auto-generated descriptions are generated from the Post Excerpt, or the first 160 characters of the post content if there is no Post Excerpt."
 msgstr "%description% - это выводит описание, которое вы указываете для каждой страницы/записи или автосгенерированное описание, если вы разрешили эту настройку. Автосгенерированные описания создаются из отрывка записи или первых 160 символов содержимого записи если у записи нет отрывка."
 
-#. #-#-#-#-#  all-in-one-seo-pack-code.pot (All In One SEO Pack 2.3.15.2) 
+#. #-#-#-#-#  all-in-one-seo-pack-code.pot (All In One SEO Pack 2.3.16) 
 #. #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  all-in-one-seo-pack-code.pot (All In One SEO Pack 2.3.15.2) 
+#. #-#-#-#-#  all-in-one-seo-pack-code.pot (All In One SEO Pack 2.3.16) 
 #. #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://semperplugins.com/all-in-one-seo-pack-pro-version/"
@@ -79,7 +132,7 @@ msgstr "https://semperplugins.com/all-in-one-seo-pack-pro-version/"
 msgid "Post Data"
 msgstr "Данные записи"
 
-#: aioseop_class.php:490
+#: aioseop_class.php:500
 msgid "Nothing found for %request_words%"
 msgstr "Ничего не найдено для % request_words%"
 
@@ -123,19 +176,19 @@ msgstr "Email Адрес"
 msgid " to upgrade to Pro Version and get:"
 msgstr "для обновления до Про-версии и получите:"
 
-#: modules/aioseop_opengraph.php:268
+#: modules/aioseop_opengraph.php:271
 msgid "Use Content For Autogenerated OG Descriptions"
 msgstr "Использовать содержание для авто-генерирования Open Graph описаний"
 
-#: modules/aioseop_opengraph.php:94
+#: modules/aioseop_opengraph.php:95
 msgid "This option will auto generate your Open Graph descriptions from your post content instead of your post excerpt. WooCommerce users should read the documentation regarding this setting."
 msgstr "Эта опция позволяет автоматически генерировать описания Open Graph из содержания записи вместо её отрывка. Пользователям WooCommerce рекомендуется прочитать документацию по данной настройке. "
 
-#: modules/aioseop_opengraph.php:86
+#: modules/aioseop_opengraph.php:87
 msgid "Enter your Facebook Admin ID here. You can enter multiple IDs separated by a comma. You can look up your Facebook ID using this tool http://findmyfbid.com/"
 msgstr "Введите сюда ваш Facebook Admin ID. Можно ввести несколько ID через запятую. Чтобы узнать ваш Facebook ID можно использовать http://findmyfbid.com/"
 
-#: aioseop_class.php:815
+#: aioseop_class.php:825
 msgid "Use Content For Autogenerated Descriptions:"
 msgstr "Использовать содержание для авто-генерирования описаний:"
 
@@ -147,16 +200,16 @@ msgstr "Эта опция позволяет автоматически гене
 msgid "Access to video tutorials about SEO with the Pro version"
 msgstr "Доступ к видео-урокам по SEO в Pro версии"
 
-#: admin/aioseop_module_class.php:2596
+#: admin/aioseop_module_class.php:2610
 msgid "Reset %s Settings to Defaults"
 msgstr "Сбросить %s настройки на настройки по умолчанию"
 
-#: aioseop_class.php:3003
+#: aioseop_class.php:3015
 msgid "Welcome to version %s. Thank you for running the latest and greatest All in One SEO Pack Pro ever! Please review your settings, as we're always adding new features for you!"
 msgstr "Добро пожаловать в версию %s. Спасибо вам за использование новейшей и самой лучшей версии All in One SEO Pack Pro! Пожалуйста, изучите настройки, так как мы постоянно добавляем новые функции для вас."
 
 #: aioseop_class.php:103 aioseop_class.php:113 aioseop_class.php:128
-#: aioseop_class.php:172 aioseop_class.php:3135
+#: aioseop_class.php:172 aioseop_class.php:3147
 msgid "%current_date% - The current date (localized)"
 msgstr "%current_date% - Текущая дата (локализованная)"
 
@@ -327,15 +380,15 @@ msgstr "Руководители проекта"
 msgid "All in One SEO Pack is created by a worldwide network of friendly folks like these."
 msgstr "All in One SEO Pack создается дружелюбным сообществом людей, как эти."
 
-#: modules/aioseop_opengraph.php:394
+#: modules/aioseop_opengraph.php:397
 msgid "Custom Twitter Image"
 msgstr "Пользовательское Twitter-изображение"
 
-#: modules/aioseop_opengraph.php:113
+#: modules/aioseop_opengraph.php:114
 msgid "This option lets you upload an image to use as the Twitter image for this Page or Post."
 msgstr "Эта опция позволяет загрузить изображение для использования в качестве Twitter-изображения для этой страницы или записи."
 
-#: aioseop_class.php:841
+#: aioseop_class.php:851
 msgid "Redirect Attachments to Post Parent:"
 msgstr "Перенаправление вложений на родительскую запись:"
 
@@ -363,7 +416,7 @@ msgstr "All in One SEO Pack был переведён на %1$s языков, н
 msgid "Sorry, you can't do that. Please choose a platform and then click Analyze or Convert."
 msgstr "К сожалению, вы не можете сделать это. Пожалуйста, выберите платформу, а затем нажмите кнопку Анализировать или Конвертировать."
 
-#: aioseop_class.php:3020
+#: aioseop_class.php:3032
 msgid "New in 2.4: Improved support for taxonomies, Woocommerce and massive performance improvements under the hood! Please review your settings on each options page!"
 msgstr "Новое в 2.4: Улучшена поддержка таксономий, совместимость с WooCommerce и прочие улучшения производительности под капотом! Пожалуйста перепроверьте параметры на каждой из страниц настроек."
 
@@ -463,11 +516,11 @@ msgstr "Найден плагин Yoast SEO. Хотите ли вы %sимпор
 msgid "Pro Version Only"
 msgstr "Только в Pro-версии"
 
-#: aioseop_class.php:3647
+#: aioseop_class.php:3659
 msgid "%s Upgrade%s to All in One SEO Pack Pro for increased SEO compatibility for your products."
 msgstr "%sОбновите%s All in One SEO Pack до Pro-версии для повышения SEO-совместимости ваших товаров."
 
-#: aioseop_class.php:3646
+#: aioseop_class.php:3658
 msgid "We've detected you're running WooCommerce."
 msgstr "Мы обнаружили, что вы используете WooCommerce."
 
@@ -499,7 +552,7 @@ msgstr "Блокировка вредных ботов, используя HTTP"
 msgid "Block Referral Spam using HTTP."
 msgstr "Блокировать реферальный спам используя HTTP."
 
-#: inc/commonstrings.php:39
+#: inc/commonstrings.php:39 inc/commonstrings.php:54
 msgid "Manage Licenses"
 msgstr "Управление лицензиями"
 
@@ -507,15 +560,15 @@ msgstr "Управление лицензиями"
 msgid "Notice: "
 msgstr "Заметка:"
 
-#: inc/commonstrings.php:37
+#: inc/commonstrings.php:37 inc/commonstrings.php:50 inc/commonstrings.php:56
 msgid " Need a license key?"
 msgstr "Нужен лицензионный ключ?"
 
-#: inc/commonstrings.php:36
+#: inc/commonstrings.php:36 inc/commonstrings.php:55
 msgid "License Key is not set yet or invalid. "
 msgstr "Лицензионный ключ еще не установлен, либо недействителен"
 
-#: inc/commonstrings.php:35
+#: inc/commonstrings.php:35 inc/commonstrings.php:51
 msgid "Purchase one now"
 msgstr "Сделать покупку сейчас"
 
@@ -567,39 +620,39 @@ msgstr "Документацию к плагину"
 msgid "SEO Settings"
 msgstr "Настройки SEO"
 
-#: aioseop_class.php:4738 aioseop_class.php:4743
+#: aioseop_class.php:4770 aioseop_class.php:4775
 msgid "About"
 msgstr "Описание"
 
-#: aioseop_class.php:3767
+#: aioseop_class.php:3779
 msgid "Debug String"
 msgstr "Отладка строки"
 
-#: aioseop_class.php:3012
+#: aioseop_class.php:3024
 msgid "Thank you for running the latest and greatest All in One SEO Pack Pro ever! Please review your settings, as we're always adding new features for you!"
 msgstr "Спасибо за использование последнего и наилучшего All in One SEO Pack Pro! Пожалуйста, проверьте настройки, так как мы постоянно добавляем новые функции!"
 
-#: aioseop_class.php:3181
+#: aioseop_class.php:3193
 msgid "%taxonomy_description% - The description of the taxonomy"
 msgstr "%taxonomy_description% - описание таксономии"
 
-#: aioseop_class.php:3180
+#: aioseop_class.php:3192
 msgid "%taxonomy_title% - The original title of the taxonomy"
 msgstr "%taxonomy_title% - оригинальное наименование таксономии"
 
-#: aioseop_class.php:3166
+#: aioseop_class.php:3178
 msgid "Taxonomy Title Format:"
 msgstr "Формат заголовка таксономии:"
 
-#: aioseop_class.php:928 all_in_one_seo_pack.php:317
+#: aioseop_class.php:938 all_in_one_seo_pack.php:317
 msgid "Support Forum"
 msgstr "Форум поддержки"
 
-#: aioseop_class.php:515
+#: aioseop_class.php:525
 msgid "SEO on only these taxonomies:"
 msgstr "SEO только для этих таксономий:"
 
-#: aioseop_class.php:337
+#: aioseop_class.php:347
 msgid "License Key:"
 msgstr "Лицензионный ключ:"
 
@@ -611,23 +664,23 @@ msgstr "Используйте эти чекбоксы для выбора, с �
 msgid "This will be the license key received when the product was purchased. This is used for automatic upgrades."
 msgstr "Это будет лицензионный ключ полученный в момент приобретения продукта. Он используется для автоматических обновлений."
 
-#: modules/aioseop_opengraph.php:224
+#: modules/aioseop_opengraph.php:227
 msgid "Facebook App ID"
 msgstr "Facebook App ID"
 
-#: modules/aioseop_opengraph.php:219
+#: modules/aioseop_opengraph.php:222
 msgid "Facebook Admin ID"
 msgstr "Facebook Admin ID"
 
-#: modules/aioseop_opengraph.php:87
+#: modules/aioseop_opengraph.php:88
 msgid "Enter your Facebook App ID here. Information about how to get your Facebook App ID can be found at https://developers.facebook.com/docs/apps/register"
 msgstr "Введите свой Facebook App ID сюда. Информация о том, как получить ваш Facebook App ID может быть получена на https://developers.facebook.com/docs/apps/register"
 
-#: aioseop_class.php:3625
+#: aioseop_class.php:3637
 msgid "You can %s click here%s to go to your reading settings and toggle your blog visibility."
 msgstr "Вы можете %sкликнуть сюда%s, чтобы перейти к настройкам чтения и переключателю видимости сайта."
 
-#: aioseop_class.php:3624
+#: aioseop_class.php:3636
 msgid "Warning: You're blocking access to search engines."
 msgstr "Внимание: Вы блокируете доступ к поисковым системам!"
 
@@ -1242,595 +1295,595 @@ msgstr "Этот параметр позволяет увеличить PHP вр
 msgid "This setting allows you to raise your PHP memory limit to a reasonable value. Note: WordPress core and other WordPress plugins may also change the value of the memory limit."
 msgstr "Этот параметр позволяет увеличить PHP лимит памяти. Примечание: ядро WordPress и другие плагины для WordPress могут также изменять значение лимита памяти."
 
-#: modules/aioseop_opengraph.php:1509
+#: modules/aioseop_opengraph.php:1512
 msgid "Choose a default value that best describes the content of your post type."
 msgstr "Выбрать значение по умолчанию, которое лучше описывает содержание записи."
 
-#: modules/aioseop_opengraph.php:1502
+#: modules/aioseop_opengraph.php:1505
 msgid "Object Type"
 msgstr "Тип данных"
 
-#: modules/aioseop_opengraph.php:872
+#: modules/aioseop_opengraph.php:875
 msgid "Scan your site for duplicate social meta tags."
 msgstr "Проверьте свой сайт на дубли социальных мета тегов."
 
-#: modules/aioseop_opengraph.php:871
+#: modules/aioseop_opengraph.php:874
 msgid "Scan Now"
 msgstr "Сканировать сейчас"
 
-#: modules/aioseop_opengraph.php:733
+#: modules/aioseop_opengraph.php:736
 msgid "Default "
 msgstr "По умолчанию"
 
-#: modules/aioseop_opengraph.php:603
+#: modules/aioseop_opengraph.php:606
 msgid "Scan Social Meta"
 msgstr "Сканировать социальные мета"
 
-#: modules/aioseop_opengraph.php:593
+#: modules/aioseop_opengraph.php:596
 msgid "Twitter Settings"
 msgstr "Настройки Twitter"
 
-#: modules/aioseop_opengraph.php:578
+#: modules/aioseop_opengraph.php:581
 msgid "Facebook Settings"
 msgstr "Настройки Facebook"
 
-#: modules/aioseop_opengraph.php:568
+#: modules/aioseop_opengraph.php:571
 msgid "Image Settings"
 msgstr "Настройки изображения"
 
-#: modules/aioseop_opengraph.php:537
+#: modules/aioseop_opengraph.php:540
 msgid "Social Settings"
 msgstr "Социальные настройки"
 
-#: modules/aioseop_opengraph.php:486
+#: modules/aioseop_opengraph.php:489
 msgid "Associated Name"
 msgstr "Связанное название"
 
-#: modules/aioseop_opengraph.php:482
+#: modules/aioseop_opengraph.php:485
 msgid "Organization"
 msgstr "Организация"
 
-#: modules/aioseop_opengraph.php:481
+#: modules/aioseop_opengraph.php:484
 msgid "Person"
 msgstr "Личность"
 
-#: modules/aioseop_opengraph.php:478
+#: modules/aioseop_opengraph.php:481
 msgid "Person or Organization?"
 msgstr "Частное лицо или организация "
 
-#: modules/aioseop_opengraph.php:472 modules/aioseop_opengraph.php:573
+#: modules/aioseop_opengraph.php:475 modules/aioseop_opengraph.php:576
 msgid "Social Profile Links"
 msgstr "Социальные сылки"
 
-#: modules/aioseop_opengraph.php:469
+#: modules/aioseop_opengraph.php:472
 msgid "Show Facebook Author on Articles"
 msgstr "Показывать Facebook автора в статьях"
 
-#: modules/aioseop_opengraph.php:464
+#: modules/aioseop_opengraph.php:467
 msgid "Show Facebook Publisher on Articles"
 msgstr "Показывать Facebook издателя в статьях"
 
-#: modules/aioseop_opengraph.php:458
+#: modules/aioseop_opengraph.php:461
 msgid "Article Tags"
 msgstr "Теги статьи"
 
-#: modules/aioseop_opengraph.php:452
+#: modules/aioseop_opengraph.php:455
 msgid "Article Section"
 msgstr "Раздел статьи"
 
-#: modules/aioseop_opengraph.php:1694
+#: modules/aioseop_opengraph.php:1697
 msgid "Debug This Post"
 msgstr "Отладить эту публикацию"
 
-#: modules/aioseop_opengraph.php:446
+#: modules/aioseop_opengraph.php:449
 msgid "Facebook Debug"
 msgstr "Отладить Facebook"
 
-#: modules/aioseop_opengraph.php:411
+#: modules/aioseop_opengraph.php:414
 msgid "Use Post Tags In Article Tags"
 msgstr "Использовать метки публикаций в метках статьи"
 
-#: modules/aioseop_opengraph.php:406
+#: modules/aioseop_opengraph.php:409
 msgid "Use Categories In Article Tags"
 msgstr "Использовать категории в метках статьи"
 
-#: modules/aioseop_opengraph.php:401
+#: modules/aioseop_opengraph.php:404
 msgid "Use Keywords In Article Tags"
 msgstr "Использовать кл. слова в тегах к статьям"
 
-#: modules/aioseop_opengraph.php:398
+#: modules/aioseop_opengraph.php:401
 msgid "Automatically Generate Article Tags"
 msgstr "Автоматически генерировать теги к статьям"
 
-#: modules/aioseop_opengraph.php:389
+#: modules/aioseop_opengraph.php:392
 msgid "Twitter Domain"
 msgstr "Twitter домен"
 
-#: modules/aioseop_opengraph.php:386
+#: modules/aioseop_opengraph.php:389
 msgid "Show Twitter Author"
 msgstr "Показывать Twitter автора"
 
-#: modules/aioseop_opengraph.php:381
+#: modules/aioseop_opengraph.php:384
 msgid "Twitter Site"
 msgstr "Twitter сайта"
 
-#: modules/aioseop_opengraph.php:370
+#: modules/aioseop_opengraph.php:373
 msgid "Twitter Card Type"
 msgstr "Тип Twitter Card"
 
-#: modules/aioseop_opengraph.php:363 modules/aioseop_opengraph.php:373
+#: modules/aioseop_opengraph.php:366 modules/aioseop_opengraph.php:376
 msgid "Summary Large Image"
 msgstr "Стандартно (большое изображение)"
 
-#: modules/aioseop_opengraph.php:362 modules/aioseop_opengraph.php:374
+#: modules/aioseop_opengraph.php:365 modules/aioseop_opengraph.php:377
 msgid "Summary"
 msgstr "Стандартно (кратко)"
 
-#: modules/aioseop_opengraph.php:358
+#: modules/aioseop_opengraph.php:361
 msgid "Default Twitter Card"
 msgstr "Twitter Card по умолчанию"
 
-#: modules/aioseop_opengraph.php:346
+#: modules/aioseop_opengraph.php:349
 msgid "Specify Video Height"
 msgstr "Указать высоту видео"
 
-#: modules/aioseop_opengraph.php:334
+#: modules/aioseop_opengraph.php:337
 msgid "Specify Video Width"
 msgstr "Указать ширину видео"
 
-#: modules/aioseop_opengraph.php:330
+#: modules/aioseop_opengraph.php:333
 msgid "Custom Video"
 msgstr "Пользовательское видео"
 
-#: modules/aioseop_opengraph.php:325
+#: modules/aioseop_opengraph.php:328
 msgid "Specify Image Height"
 msgstr "Указать высоту изображения"
 
-#: modules/aioseop_opengraph.php:320
+#: modules/aioseop_opengraph.php:323
 msgid "Specify Image Width"
 msgstr "Указать ширину изображения"
 
-#: modules/aioseop_opengraph.php:316
+#: modules/aioseop_opengraph.php:319
 msgid "Custom Image"
 msgstr "Пользовательское изображение"
 
-#: modules/aioseop_opengraph.php:309
+#: modules/aioseop_opengraph.php:312
 msgid "Image"
 msgstr "Изображение"
 
-#: modules/aioseop_opengraph.php:439
+#: modules/aioseop_opengraph.php:442
 msgid "Facebook Object Type"
 msgstr "Тип данных Facebook"
 
-#: modules/aioseop_opengraph.php:304
+#: modules/aioseop_opengraph.php:307
 msgid "Use Custom Field For Image"
 msgstr "Использовать пользовательские поля для изображения"
 
-#: modules/aioseop_opengraph.php:299
+#: modules/aioseop_opengraph.php:302
 msgid "Default Image Height"
 msgstr "Высота изображения по умолчанию"
 
-#: modules/aioseop_opengraph.php:294
+#: modules/aioseop_opengraph.php:297
 msgid "Default Image Width"
 msgstr "Ширина изображения по умолчанию"
 
-#: modules/aioseop_opengraph.php:289
+#: modules/aioseop_opengraph.php:292
 msgid "Default OG:Image"
 msgstr "OG:Image по умолчанию"
 
-#: modules/aioseop_opengraph.php:285
+#: modules/aioseop_opengraph.php:288
 msgid "Use Default If No Image Found"
 msgstr "Использовать изображение по умолчанию, если другого не найдено"
 
-#: modules/aioseop_opengraph.php:281
+#: modules/aioseop_opengraph.php:284
 msgid "First Available Image"
 msgstr "Первое доступное изображение"
 
-#: modules/aioseop_opengraph.php:280
+#: modules/aioseop_opengraph.php:283
 msgid "Post Author Image"
 msgstr "Изображение автора статьи"
 
-#: modules/aioseop_opengraph.php:279
+#: modules/aioseop_opengraph.php:282
 msgid "Image From Custom Field"
 msgstr "Изображение из пользовательского поля"
 
-#: modules/aioseop_opengraph.php:278
+#: modules/aioseop_opengraph.php:281
 msgid "First Image In Content"
 msgstr "Первое изображение в контенте"
 
-#: modules/aioseop_opengraph.php:277
+#: modules/aioseop_opengraph.php:280
 msgid "First Attached Image"
 msgstr "Первое добавленное изображение"
 
-#: modules/aioseop_opengraph.php:276
+#: modules/aioseop_opengraph.php:279
 msgid "Featured Image"
 msgstr "Показываемое (рекомендуемое) изображение"
 
-#: modules/aioseop_opengraph.php:275
+#: modules/aioseop_opengraph.php:278
 msgid "Default Image"
 msgstr "Изображение по умолчанию"
 
-#: modules/aioseop_opengraph.php:272
+#: modules/aioseop_opengraph.php:275
 msgid "Select OG:Image Source"
 msgstr "Выбрать источник OG:Image"
 
-#: modules/aioseop_opengraph.php:264
+#: modules/aioseop_opengraph.php:267
 msgid "Home Image"
 msgstr "Изображение дом. страницы"
 
-#: modules/aioseop_opengraph.php:252
+#: modules/aioseop_opengraph.php:255
 msgid "Home Description"
 msgstr "Описание дом. страницы"
 
-#: modules/aioseop_opengraph.php:240
+#: modules/aioseop_opengraph.php:243
 msgid "Home Title"
 msgstr "Заголовок дом. страницы"
 
-#: modules/aioseop_opengraph.php:235
+#: modules/aioseop_opengraph.php:238
 msgid "Site Name"
 msgstr "Название сайта"
 
-#: modules/aioseop_opengraph.php:232
+#: modules/aioseop_opengraph.php:235
 msgid "Run Shortcodes In Description"
 msgstr "Использовать шорткоды в описании"
 
-#: modules/aioseop_opengraph.php:229
+#: modules/aioseop_opengraph.php:232
 msgid "Run Shortcodes In Title"
 msgstr "Включить шорткоды в заголовке"
 
-#: modules/aioseop_opengraph.php:215
+#: modules/aioseop_opengraph.php:218
 msgid "Use AIOSEO Title and Description"
 msgstr "Использовать AIOSEO заголовок и описание"
 
-#: modules/aioseop_opengraph.php:210
+#: modules/aioseop_opengraph.php:213
 msgid "Scan Header"
 msgstr "Сканировать заголовок"
 
-#: modules/aioseop_opengraph.php:206
+#: modules/aioseop_opengraph.php:209
 msgid " characters. Open Graph allows up to a maximum of %s chars for the %s."
 msgstr " символов. Open Graph позволяет использовать максимум %s символов."
 
-#: modules/aioseop_opengraph.php:129
+#: modules/aioseop_opengraph.php:130
 msgid "Add the name of the person or organization who owns these profiles."
 msgstr "Добавьте имя персоны или название организации, владеющей этими профилями."
 
-#: modules/aioseop_opengraph.php:128
+#: modules/aioseop_opengraph.php:129
 msgid "Add URLs for your website's social profiles here (Facebook, Twitter, Google+, Instagram, LinkedIn), one per line."
 msgstr "Добавьте URL на социальные профили, ассоциированные с вашим сайтом, здесь (Facebook, Twitter, Google+, Instagram, LinkedIn), по одному в каждой строке."
 
-#: modules/aioseop_opengraph.php:127
+#: modules/aioseop_opengraph.php:128
 msgid "Are the social profile links for your website for a person or an organization?"
 msgstr "Ссылки, размещённые на вашем сайте, ведут на персональные или корпоративные профили в соцсетях?"
 
-#: modules/aioseop_opengraph.php:126
+#: modules/aioseop_opengraph.php:127
 msgid "Allows your authors to be identified by their Facebook pages as content authors on the Opengraph meta for their articles."
 msgstr "Позволить авторам идентифицироваться своими Facebook аккаунтами в качестве авторов контента на Opengraph мета для своих статей."
 
-#: modules/aioseop_opengraph.php:125
+#: modules/aioseop_opengraph.php:126
 msgid "Link articles to the Facebook page associated with your website."
 msgstr "Ссылка на Facebook страницу, связанную с Вашим сайтом."
 
-#: modules/aioseop_opengraph.php:124
+#: modules/aioseop_opengraph.php:125
 msgid "This Open Graph meta allows you to add a list of keywords that best describe this content."
 msgstr "Этот Open Graph мета позволяет добавлять список ключевых слов, которые лучше всего описывает этот контент."
 
-#: modules/aioseop_opengraph.php:123
+#: modules/aioseop_opengraph.php:124
 msgid "This Open Graph meta allows you to add a general section name that best describes this content."
 msgstr "Этот Open Graph мета позволяет добавлять в общий раздел название, которое лучше всего описывает этот контент."
 
-#: modules/aioseop_opengraph.php:122
+#: modules/aioseop_opengraph.php:123
 msgid "Press this button to have Facebook re-fetch and debug this page."
 msgstr "Нажмите эту кнопку для повторного извлечения и отладки Facebook'ом данной страницы."
 
-#: modules/aioseop_opengraph.php:121
+#: modules/aioseop_opengraph.php:122
 msgid "Select the Open Graph type that best describes the content of this Page or Post."
 msgstr "Выберите тип Open Graph, который лучше описывает содержание этой страницы или записи."
 
-#: modules/aioseop_opengraph.php:120
+#: modules/aioseop_opengraph.php:121
 msgid "This is the Open Graph description of this Page or Post."
 msgstr "Это Open Graph описание этой страницы или записи."
 
-#: modules/aioseop_opengraph.php:119
+#: modules/aioseop_opengraph.php:120
 msgid "This is the Open Graph title of this Page or Post."
 msgstr "Это Open Graph заголовок этой страницы или записи."
 
-#: modules/aioseop_opengraph.php:118
+#: modules/aioseop_opengraph.php:119
 msgid "Select which Post Types you want to use All in One SEO Pack to set Open Graph meta values for."
 msgstr "Выберите, в каких типах записей Вы хотите использовать All in One SEO Pack для установки Open Graph мета значений."
 
-#: modules/aioseop_opengraph.php:117
+#: modules/aioseop_opengraph.php:118
 msgid "Use post tags in generated article tags."
 msgstr "Используйте post тэги в генерируемых тегах статьи."
 
-#: modules/aioseop_opengraph.php:116
+#: modules/aioseop_opengraph.php:117
 msgid "Use categories in generated article tags."
 msgstr "Использовать категории для генерируемых тегов статей."
 
-#: modules/aioseop_opengraph.php:115
+#: modules/aioseop_opengraph.php:116
 msgid "Use keywords in generated article tags."
 msgstr "Использовать ключевые слова в генерируемых метках статей."
 
-#: modules/aioseop_opengraph.php:114
+#: modules/aioseop_opengraph.php:115
 msgid "Automatically generate article tags for Facebook type article when not provided."
 msgstr "Автоматически генерировать метки статей для Facebook статей, когда не задано."
 
-#: modules/aioseop_opengraph.php:112
+#: modules/aioseop_opengraph.php:113
 msgid "Enter the name of your website here."
 msgstr "Введите здесь название Вашего сайта."
 
-#: modules/aioseop_opengraph.php:111
+#: modules/aioseop_opengraph.php:112
 msgid "Allows your authors to be identified by their Twitter usernames as content creators on the Twitter cards for their posts."
 msgstr "Позволяет авторам идентифицироваться своими Twitter аккаунтами в качестве создателей контента на Twitter cards для своих постов."
 
-#: modules/aioseop_opengraph.php:110
+#: modules/aioseop_opengraph.php:111
 msgid "Enter the Twitter username associated with your website here."
 msgstr "Введите имя пользователя Twitter, связанного с сайтом."
 
-#: modules/aioseop_opengraph.php:108 modules/aioseop_opengraph.php:109
-msgid "Select the default type of Twitter card to display."
+#: modules/aioseop_opengraph.php:109
+msgid "Select the default type of Twitter Card to display."
 msgstr "Выберите тип отображения Twitter card по умолчанию."
 
-#: modules/aioseop_opengraph.php:107
+#: modules/aioseop_opengraph.php:108
 msgid "Enter the height for your Open Graph video in pixels (i.e. 600)."
 msgstr "Введите высоту Open Graph видео в пикселях (напр. 600)."
 
-#: modules/aioseop_opengraph.php:106
+#: modules/aioseop_opengraph.php:107
 msgid "Enter the width for your Open Graph video in pixels (i.e. 600)."
 msgstr "Введите ширину Open Graph видео в пикселях (напр. 600)."
 
-#: modules/aioseop_opengraph.php:105
+#: modules/aioseop_opengraph.php:106
 msgid "This option lets you specify a link to the Open Graph video used on this Page or Post."
 msgstr "Эта опция позволяет Вам указать ссылку на Open Graph видео, используемое на этой странице или записи."
 
-#: modules/aioseop_opengraph.php:104
+#: modules/aioseop_opengraph.php:105
 msgid "Enter the height for your Open Graph image in pixels (i.e. 600)."
 msgstr "Введите высоту Open Graph изображения в пикселях (напр. 600)."
 
-#: modules/aioseop_opengraph.php:103
+#: modules/aioseop_opengraph.php:104
 msgid "Enter the width for your Open Graph image in pixels (i.e. 600)."
 msgstr "Введите ширину Open Graph изображения в пикселях (напр. 600)."
 
-#: modules/aioseop_opengraph.php:102
+#: modules/aioseop_opengraph.php:103
 msgid "This option lets you upload an image to use as the Open Graph image for this Page or Post."
 msgstr "Эта опция позволяет загружать изображения для использования как Open Graph изображение для данной страницы или записи."
 
-#: modules/aioseop_opengraph.php:101
+#: modules/aioseop_opengraph.php:102
 msgid "This option lets you select the Open Graph image that will be used for this Page or Post, overriding the default settings."
 msgstr "Эта опция позволяет выбрать Open Graph изображение, которое будет использоваться для данной страницы или записи, перезаписывая настройки по умолчанию."
 
-#: modules/aioseop_opengraph.php:100
+#: modules/aioseop_opengraph.php:101
 msgid "Enter the name of a custom field (or multiple field names separated by commas) to use that field to specify the Open Graph image on Pages or Posts."
 msgstr "Введите название пользовательского поля (можно несколько, разделяя их запятыми), чтобы использовать это поле для указания Open Graph изображения на страницах или в записях."
 
-#: modules/aioseop_opengraph.php:99
+#: modules/aioseop_opengraph.php:100
 msgid "This option lets you set a default height for your images, where unspecified."
 msgstr "Эта опция позволяет установить высоту по умолчанию для ваших изображений, где не определенно."
 
-#: modules/aioseop_opengraph.php:98
+#: modules/aioseop_opengraph.php:99
 msgid "This option lets you set a default width for your images, where unspecified."
 msgstr "Эта опция позволяет устанавливать ширину по умолчанию для изображений, где не указано."
 
-#: modules/aioseop_opengraph.php:97
+#: modules/aioseop_opengraph.php:98
 msgid "This option sets a default image that can be used for the Open Graph image. You can upload an image, select an image from your Media Library or paste the URL of an image here."
 msgstr "Эта опция устанавливает изображение по умолчанию, которое можно использовать как Open Graph изображение. Вы можете загрузить изображение, выбрать его из Медиа библиотеки или вставить сюда URL изображения."
 
-#: modules/aioseop_opengraph.php:96
+#: modules/aioseop_opengraph.php:97
 msgid "This option lets you fall back to the default image if no image could be found above."
 msgstr "Эта опция позволяет вернуться к изображению по умолчанию, если изображение выше не может быть найдено."
 
-#: modules/aioseop_opengraph.php:95
+#: modules/aioseop_opengraph.php:96
 msgid "This option lets you choose which image will be displayed by default for the Open Graph image. You may override this on individual posts."
 msgstr "Эта опция позволит Вам выбрать, какое изображение будет отображаться по умолчанию как Open Graph изображения. Вы можете переопределить это на отдельных записях."
 
-#: modules/aioseop_opengraph.php:93
+#: modules/aioseop_opengraph.php:94
 msgid "The Home Image is the Open Graph image for your home page."
 msgstr "Open Graph изображение для домашней страницы."
 
-#: modules/aioseop_opengraph.php:92
+#: modules/aioseop_opengraph.php:93
 msgid "The Home Description is the Open Graph description for your home page."
 msgstr "Open Graph описание для домашней страницы."
 
-#: modules/aioseop_opengraph.php:91
+#: modules/aioseop_opengraph.php:92
 msgid "The Home Title is the Open Graph title for your home page."
 msgstr "Open Graph заголовок для домашней страницы."
 
-#: modules/aioseop_opengraph.php:90
+#: modules/aioseop_opengraph.php:91
 msgid "The Site Name is the name that is used to identify your website."
 msgstr "Имя сайта - это имя, используемое для идентификации Вашего веб-сайта."
 
-#: modules/aioseop_opengraph.php:89
+#: modules/aioseop_opengraph.php:90
 msgid "Run shortcodes that appear in social description meta tags."
 msgstr "Запуск шорткодов, которые появляются в мета-тегах описания для соцсетей."
 
-#: modules/aioseop_opengraph.php:88
+#: modules/aioseop_opengraph.php:89
 msgid "Run shortcodes that appear in social title meta tags."
 msgstr "Запуск шорткодов, которые появляются в мета-тегах заголовков для соцсетей."
 
-#: modules/aioseop_opengraph.php:85
+#: modules/aioseop_opengraph.php:86
 msgid "Checking this box will use the Home Title and Home Description set in All in One SEO Pack, General Settings as the Open Graph title and description for your home page."
 msgstr "При отметке этого поля будет использоваться заголовок и описание домашней страницы, установленные в общих настройках All in One Seo Pack."
 
-#: modules/aioseop_opengraph.php:79
+#: modules/aioseop_opengraph.php:80
 msgid "Website"
 msgstr "Веб сайт"
 
-#: modules/aioseop_opengraph.php:78
+#: modules/aioseop_opengraph.php:79
 msgid "Blog"
 msgstr "Блог"
 
-#: modules/aioseop_opengraph.php:77
+#: modules/aioseop_opengraph.php:78
 msgid "Article"
 msgstr "Статья"
 
-#: modules/aioseop_opengraph.php:74
+#: modules/aioseop_opengraph.php:75
 msgid "Episode"
 msgstr "Эпизод"
 
-#: modules/aioseop_opengraph.php:73
+#: modules/aioseop_opengraph.php:74
 msgid "TV Show"
 msgstr "ТВ шоу"
 
-#: modules/aioseop_opengraph.php:72
+#: modules/aioseop_opengraph.php:73
 msgid "Song"
 msgstr "Песня"
 
-#: modules/aioseop_opengraph.php:71
+#: modules/aioseop_opengraph.php:72
 msgid "Product"
 msgstr "Продукт"
 
-#: modules/aioseop_opengraph.php:70
+#: modules/aioseop_opengraph.php:71
 msgid "Movie"
 msgstr "Фильм"
 
-#: modules/aioseop_opengraph.php:69
+#: modules/aioseop_opengraph.php:70
 msgid "Game"
 msgstr "Игра"
 
-#: modules/aioseop_opengraph.php:68
+#: modules/aioseop_opengraph.php:69
 msgid "Food"
 msgstr "Еда"
 
-#: modules/aioseop_opengraph.php:67
+#: modules/aioseop_opengraph.php:68
 msgid "Drink"
 msgstr "Напиток"
 
-#: modules/aioseop_opengraph.php:66
+#: modules/aioseop_opengraph.php:67
 msgid "Book"
 msgstr "Книга"
 
-#: modules/aioseop_opengraph.php:65
+#: modules/aioseop_opengraph.php:66
 msgid "Album"
 msgstr "Альбом"
 
-#: modules/aioseop_opengraph.php:62
+#: modules/aioseop_opengraph.php:63
 msgid "State Province"
 msgstr "Штат, область"
 
-#: modules/aioseop_opengraph.php:61
+#: modules/aioseop_opengraph.php:62
 msgid "Landmark"
 msgstr "Ориентир"
 
-#: modules/aioseop_opengraph.php:60
+#: modules/aioseop_opengraph.php:61
 msgid "Country"
 msgstr "Страна"
 
-#: modules/aioseop_opengraph.php:59
+#: modules/aioseop_opengraph.php:60
 msgid "City"
 msgstr "Город"
 
-#: modules/aioseop_opengraph.php:56
+#: modules/aioseop_opengraph.php:57
 msgid "Public Figure"
 msgstr "Публичная личность"
 
-#: modules/aioseop_opengraph.php:55
+#: modules/aioseop_opengraph.php:56
 msgid "Profile"
 msgstr "Профиль"
 
-#: modules/aioseop_opengraph.php:54
+#: modules/aioseop_opengraph.php:55
 msgid "Politician"
 msgstr "Политик"
 
-#: modules/aioseop_opengraph.php:53
+#: modules/aioseop_opengraph.php:54
 msgid "Musician"
 msgstr "Музыкант"
 
-#: modules/aioseop_opengraph.php:52
+#: modules/aioseop_opengraph.php:53
 msgid "Director"
 msgstr "Директор"
 
-#: modules/aioseop_opengraph.php:51
+#: modules/aioseop_opengraph.php:52
 msgid "Author"
 msgstr "Автор"
 
-#: modules/aioseop_opengraph.php:50
+#: modules/aioseop_opengraph.php:51
 msgid "Athlete"
 msgstr "Спортсмен"
 
-#: modules/aioseop_opengraph.php:49
+#: modules/aioseop_opengraph.php:50
 msgid "Actor"
 msgstr "Актер"
 
-#: modules/aioseop_opengraph.php:46
+#: modules/aioseop_opengraph.php:47
 msgid "University"
 msgstr "Университет"
 
-#: modules/aioseop_opengraph.php:45
+#: modules/aioseop_opengraph.php:46
 msgid "School"
 msgstr "Школа"
 
-#: modules/aioseop_opengraph.php:44
+#: modules/aioseop_opengraph.php:45
 msgid "Non Profit"
 msgstr "Некоммерческий"
 
-#: modules/aioseop_opengraph.php:43
+#: modules/aioseop_opengraph.php:44
 msgid "Government"
 msgstr "Правительство"
 
-#: modules/aioseop_opengraph.php:42
+#: modules/aioseop_opengraph.php:43
 msgid "Band"
 msgstr "Группа"
 
-#: modules/aioseop_opengraph.php:39
+#: modules/aioseop_opengraph.php:40
 msgid "Sports Team"
 msgstr "Спортивная команда"
 
-#: modules/aioseop_opengraph.php:38
+#: modules/aioseop_opengraph.php:39
 msgid "Sports League"
 msgstr "Спортивная лига"
 
-#: modules/aioseop_opengraph.php:37
+#: modules/aioseop_opengraph.php:38
 msgid "Cause"
 msgstr "Дело"
 
-#: modules/aioseop_opengraph.php:34
+#: modules/aioseop_opengraph.php:35
 msgid "Restaurant"
 msgstr "Ресторан"
 
-#: modules/aioseop_opengraph.php:33
+#: modules/aioseop_opengraph.php:34
 msgid "Hotel"
 msgstr "Отель"
 
-#: modules/aioseop_opengraph.php:32
+#: modules/aioseop_opengraph.php:33
 msgid "Cafe"
 msgstr "Кафе"
 
-#: modules/aioseop_opengraph.php:31
+#: modules/aioseop_opengraph.php:32
 msgid "Company"
 msgstr "Компания"
 
-#: modules/aioseop_opengraph.php:30
+#: modules/aioseop_opengraph.php:31
 msgid "Bar"
 msgstr "Бар"
 
-#: modules/aioseop_opengraph.php:27
+#: modules/aioseop_opengraph.php:28
 msgid "Sport"
 msgstr "Спорт"
 
-#: modules/aioseop_opengraph.php:26
+#: modules/aioseop_opengraph.php:27
 msgid "Activity"
 msgstr "Активность"
 
-#: admin/aioseop_module_class.php:2591
+#: admin/aioseop_module_class.php:2605
 msgid "Update Options"
 msgstr "Обновить настройки"
 
-#: admin/aioseop_module_class.php:2517
+#: admin/aioseop_module_class.php:2531
 msgid "All in One SEO Options Updated."
 msgstr "Настройки All in One SEO обновлены."
 
-#: admin/aioseop_module_class.php:2508
+#: admin/aioseop_module_class.php:2522
 msgid "Options Reset."
 msgstr "Сброс настроек."
 
-#: admin/aioseop_module_class.php:2505 modules/aioseop_sitemap.php:875
+#: admin/aioseop_module_class.php:2519 modules/aioseop_sitemap.php:875
 msgid "Security Check - If you receive this in error, log out and back in to WordPress"
 msgstr "Ошибка системы безопасности. Выйдите из аккаунта WordPress и зайдите в него снова"
 
-#: admin/aioseop_module_class.php:2287
+#: admin/aioseop_module_class.php:2301
 msgid "Click for Help!"
 msgstr "Нажмите для помощи!"
 
-#: admin/aioseop_module_class.php:2248
+#: admin/aioseop_module_class.php:2262
 msgid " characters. Most search engines use a maximum of %s chars for the %s."
 msgstr " символов. Большинство поисковых систем видят лишь %s символов."
 
@@ -2088,11 +2141,7 @@ msgstr "Сгенерируйте и проверьте Ваш robots.txt для 
 msgid "Robots.txt"
 msgstr "Robots.txt"
 
-#: modules/aioseop_feature_manager.php:34
-msgid "Activate this feature to add Social Meta data to your site to deliver closer integration between your website/blog and Facebook, Twitter, and Google+."
-msgstr "Управляйте социальными мета даннымы для лучшей интеграции Вашего блога с сетями Facebook, Twitter, и Google+."
-
-#: modules/aioseop_feature_manager.php:33 modules/aioseop_opengraph.php:21
+#: modules/aioseop_feature_manager.php:33 modules/aioseop_opengraph.php:22
 msgid "Social Meta"
 msgstr "Социальные мета"
 
@@ -2108,41 +2157,41 @@ msgstr "XML Карта сайта"
 msgid "Feature Manager"
 msgstr "Управление модулями"
 
-#: aioseop_class.php:4457
+#: aioseop_class.php:4469
 msgid "Main Settings"
 msgstr "Основные настройки"
 
-#: admin/aioseop_module_class.php:2041 admin/aioseop_module_class.php:2322
-#: admin/aioseop_module_class.php:2627 aioseop_class.php:4778
-#: aioseop_class.php:4796
+#: admin/aioseop_module_class.php:2055 admin/aioseop_module_class.php:2336
+#: admin/aioseop_module_class.php:2641 aioseop_class.php:4810
+#: aioseop_class.php:4828
 msgid "Help"
 msgstr "Помощь"
 
-#: aioseop_class.php:4743 aioseop_class.php:4748
+#: aioseop_class.php:4775 aioseop_class.php:4780
 msgid "Version"
 msgstr "Версия"
 
-#: aioseop_class.php:4748
+#: aioseop_class.php:4780
 msgid "Support"
 msgstr "Поддержка"
 
-#: aioseop_class.php:4733
+#: aioseop_class.php:4765
 msgid "Join Our Mailing List"
 msgstr "Подпишитесь на нашу рассылку"
 
-#: aioseop_class.php:4649
+#: aioseop_class.php:4676
 msgid "All in One SEO"
 msgstr "All in One SEO"
 
-#: aioseop_class.php:4514
+#: aioseop_class.php:4526
 msgid "Upgrade To Pro"
 msgstr "Улучшить до PRO"
 
-#: aioseop_class.php:4548
+#: aioseop_class.php:4561 aioseop_class.php:4573
 msgid "Edit SEO"
 msgstr "Править SEO"
 
-#: aioseop_class.php:4507
+#: aioseop_class.php:4519
 msgid "SEO"
 msgstr "SEO"
 
@@ -2162,7 +2211,7 @@ msgstr "Удалить сохраненные учетные данные"
 msgid "Disconnect From Google Analytics"
 msgstr "Отключиться от Google Analytics"
 
-#: aioseop_class.php:3738
+#: aioseop_class.php:3750
 msgid "Debug Warning: All in One SEO Pack meta data was included again from %s filter. Called %s times!"
 msgstr "Отладочное предупреждение: Метаданные All in One SEO Pack были повторно включены из фильтра %s. Количество вызовов: %s!"
 
@@ -2202,7 +2251,7 @@ msgstr "Подпишитесь сегодня и получите бесплат
 msgid "Join our mailing list for tips, tricks, and WordPress secrets."
 msgstr "Подпишитесь на нашу рассылку секретов и советов по WordPress."
 
-#: aioseop_class.php:922
+#: aioseop_class.php:932
 msgid "UPGRADE TO PRO VERSION"
 msgstr "ОБНОВИТЕ ДО ПРЕМИУМ ВЕРСИИ"
 
@@ -2214,339 +2263,331 @@ msgstr "Премиум версия"
 msgid "Reset Dismissed Notices"
 msgstr "Сбросить отклоненные уведомления"
 
-#: aioseop_class.php:3315
+#: aioseop_class.php:3327
 msgid "nofollow"
 msgstr "nofollow"
 
-#: aioseop_class.php:3314
+#: aioseop_class.php:3326
 msgid "follow"
 msgstr "follow"
 
-#: aioseop_class.php:3313
+#: aioseop_class.php:3325
 msgid "Default - nofollow"
 msgstr "По умолчанию - nofollow"
 
-#: aioseop_class.php:3307
+#: aioseop_class.php:3319
 msgid "noindex"
 msgstr "noindex"
 
-#: aioseop_class.php:3306
+#: aioseop_class.php:3318
 msgid "index"
 msgstr "index"
 
-#: aioseop_class.php:3305
+#: aioseop_class.php:3317
 msgid "Default - noindex"
 msgstr "По умолчанию - noindex"
 
-#: aioseop_class.php:3223
+#: aioseop_class.php:3235
 msgid "Reset ALL Settings to Defaults"
 msgstr "Сбросить ВСЕ настройки по умолчанию"
 
-#: aioseop_class.php:3219
+#: aioseop_class.php:3231
 msgid "Reset General Settings to Defaults"
 msgstr "Сбросить Общие Настройки по умолчанию"
 
-#: aioseop_class.php:3038
+#: aioseop_class.php:3050
 msgid "Thank you for running the latest and greatest All in One SEO Pack ever! New since 2.2: Control who accesses your site with the new Robots.txt Editor and File Editor modules!  Enable them from the Feature Manager.  Remember to review your settings, we have added some new ones!"
 msgstr "Спасибо за использование обновлённого и самого лучшего All in One SEO Pack. Нововведения в версии 2.2: Контроль доступа на сайт при помощи нового редактора Robots.txt и модулей редактора файлов. Подключите их в менеджере функционала. Не забудьте проверить ваши настройки, мы добавили новые функции!"
 
-#: aioseop_class.php:3002 aioseop_class.php:3019 aioseop_class.php:3037
+#: aioseop_class.php:3014 aioseop_class.php:3031 aioseop_class.php:3049
 msgid "Review Your Settings"
 msgstr "Просмотреть настройки"
 
-#: aioseop_class.php:3030
+#: aioseop_class.php:3042
 msgid "Thank you for running the latest and greatest All in One SEO Pack ever! Please review your settings, as we're always adding new features for you!"
 msgstr "Спасибо за использование последнего и наилучшего All in One SEO Pack. Пожалуйста, проверьте настройки, так как мы постоянно добавляем новые функции!"
 
-#: aioseop_class.php:3011 aioseop_class.php:3029
+#: aioseop_class.php:3023 aioseop_class.php:3041
 msgid "Welcome to Version %s!"
 msgstr "Добро пожаловать в версию %s!"
 
-#: aioseop_class.php:3127
+#: aioseop_class.php:3139
 msgid "%%tax_%s%% - This post's associated %s taxonomy title"
 msgstr "%%tax_%s%% - С этой публикацией связанный %s заголовок таксономии"
 
-#: aioseop_class.php:3123
+#: aioseop_class.php:3135
 msgid "%post_title% - The original title of the post."
 msgstr "%post_title% - Оригинальный заголовок записи."
 
-#: aioseop_class.php:3109
+#: aioseop_class.php:3121
 msgid "Title Format:"
 msgstr "Формат заголовка:"
 
-#: aioseop_class.php:3101
+#: aioseop_class.php:3113
 msgid "Everywhere Else"
 msgstr "Везде"
 
-#: aioseop_class.php:3101
+#: aioseop_class.php:3113
 msgid "Front Page"
 msgstr "Главная страница"
 
-#: aioseop_class.php:1086 modules/aioseop_opengraph.php:598
+#: aioseop_class.php:1096 modules/aioseop_opengraph.php:601
 msgid "Advanced Settings"
 msgstr "Расширенные настройки"
 
-#: aioseop_class.php:1069
+#: aioseop_class.php:1079
 msgid "Noindex Settings"
 msgstr "Настройки индексирования (noindex)"
 
-#: aioseop_class.php:1042
+#: aioseop_class.php:1052
 msgid "Google Settings"
 msgstr "Настройки Google"
 
-#: aioseop_class.php:1037
+#: aioseop_class.php:1047
 msgid "Webmaster Verification"
 msgstr "Верификация вебмастера"
 
-#: aioseop_class.php:1032
+#: aioseop_class.php:1042
 msgid "Display Settings"
 msgstr "Настройки отображения"
 
-#: aioseop_class.php:1027
+#: aioseop_class.php:1037
 msgid "Custom Post Type Settings"
 msgstr "Настройки для пользовательских типов записей"
 
-#: aioseop_class.php:1007
+#: aioseop_class.php:1017
 msgid "Title Settings"
 msgstr "Настройки заголовков"
 
-#: aioseop_class.php:1104
+#: aioseop_class.php:1114
 msgid "Keyword Settings"
 msgstr "Настройки ключей"
 
-#: aioseop_class.php:1002 modules/aioseop_opengraph.php:563
+#: aioseop_class.php:1012 modules/aioseop_opengraph.php:566
 msgid "Home Page Settings"
 msgstr "Настройки главной страницы"
 
-#: aioseop_class.php:981
+#: aioseop_class.php:991
 msgid "Disable Google Analytics"
 msgstr "Отключить Google Analytics"
 
-#: aioseop_class.php:979
+#: aioseop_class.php:989
 msgid "Disable on this page/post"
 msgstr "Отключить для этой страницы/записи"
 
-#: aioseop_class.php:978
+#: aioseop_class.php:988
 msgid "Exclude From Sitemap"
 msgstr "Исключить из карты сайта"
 
-#: aioseop_class.php:975
-msgid "Robots Meta NOFOLLOW"
-msgstr "Добавить аргумент NOFOLLOW"
-
-#: aioseop_class.php:971
-msgid "Robots Meta NOINDEX"
-msgstr "Добавить аргумент NOINDEX"
-
-#: aioseop_class.php:966
+#: aioseop_class.php:976
 msgid "Custom Canonical URL"
 msgstr "Пользовательский канонический URL"
 
-#: aioseop_class.php:962
+#: aioseop_class.php:972
 msgid "Keywords (comma separated)"
 msgstr "Ключевые слова (разделять запятыми)"
 
-#: aioseop_class.php:954 modules/aioseop_opengraph.php:430
+#: aioseop_class.php:964 modules/aioseop_opengraph.php:433
 msgid "Description"
 msgstr "Описание"
 
-#: aioseop_class.php:948 modules/aioseop_opengraph.php:422
+#: aioseop_class.php:958 modules/aioseop_opengraph.php:425
 msgid "Title"
 msgstr "Заголовок"
 
-#: aioseop_class.php:931
+#: aioseop_class.php:941
 msgid "Preview Snippet"
 msgstr "Предпросмотр сниппета"
 
-#: aioseop_class.php:922
+#: aioseop_class.php:932
 msgid "Upgrade to All in One SEO Pack Pro Version"
 msgstr "Обновиться до All in One SEO Pack Pro версии"
 
-#: aioseop_class.php:874
+#: aioseop_class.php:884
 msgid "Log important events:"
 msgstr "Вести журнал событий:"
 
-#: aioseop_class.php:868
+#: aioseop_class.php:878
 msgid "Additional Blog Page Headers:"
 msgstr "Доп. заголовки главной страницы (блог):"
 
-#: aioseop_class.php:862
+#: aioseop_class.php:872
 msgid "Additional Front Page Headers:"
 msgstr "Доп. заголовки главной страницы (статической):"
 
-#: aioseop_class.php:856
+#: aioseop_class.php:866
 msgid "Additional Page Headers:"
 msgstr "Доп. заголовки страниц:"
 
-#: aioseop_class.php:850
+#: aioseop_class.php:860
 msgid "Additional Post Headers:"
 msgstr "Доп. заголовки записей:"
 
-#: aioseop_class.php:845
+#: aioseop_class.php:855
 msgid "Exclude Pages:"
 msgstr "Исключить страницы:"
 
-#: aioseop_class.php:837
+#: aioseop_class.php:847
 msgid "Unprotect Post Meta Fields:"
 msgstr "Незащищенные МЕТА-поля:"
 
-#: aioseop_class.php:833
+#: aioseop_class.php:843
 msgid "Use Schema.org Markup"
 msgstr "Использовать разметку Schema.org"
 
-#: aioseop_class.php:829
+#: aioseop_class.php:839
 msgid "Never Shorten Long Descriptions:"
 msgstr "Никогда не сокращать длинные описания:"
 
-#: aioseop_class.php:825
+#: aioseop_class.php:835
 msgid "Remove Descriptions For Paginated Pages:"
 msgstr "Удалить описания со страниц с пагинацией:"
 
-#: aioseop_class.php:820
+#: aioseop_class.php:830
 msgid "Run Shortcodes In Autogenerated Descriptions:"
 msgstr "Использовать шорткоды в авто-генерируемых описаниях:"
 
-#: aioseop_class.php:811
+#: aioseop_class.php:821
 msgid "Autogenerate Descriptions:"
 msgstr "Авто-генерируемые описания:"
 
-#: aioseop_class.php:807
+#: aioseop_class.php:817
 msgid "Use nofollow for paginated pages/posts:"
 msgstr "Использовать nofollow для страниц/записей с пагинацией:"
 
-#: aioseop_class.php:803
+#: aioseop_class.php:813
 msgid "Use noindex for paginated pages/posts:"
 msgstr "Использовать noindex для страниц/записей с пагинацией:"
 
-#: aioseop_class.php:797
+#: aioseop_class.php:807
 msgid "Use noindex for Taxonomy Archives:"
 msgstr "Использовать noindex для архивов таксономии:"
 
-#: aioseop_class.php:793
+#: aioseop_class.php:803
 msgid "Use noindex for the 404 page:"
 msgstr "Использовать noindex для 404 страницы:"
 
-#: aioseop_class.php:789
+#: aioseop_class.php:799
 msgid "Use noindex for the Search page:"
 msgstr "Использовать noindex для страницы поиска:"
 
-#: aioseop_class.php:785
+#: aioseop_class.php:795
 msgid "Use noindex for Tag Archives:"
 msgstr "Использовать noindex для архивов меток:"
 
-#: aioseop_class.php:781
+#: aioseop_class.php:791
 msgid "Use noindex for Author Archives:"
 msgstr "Использовать noindex для архивов авторов:"
 
-#: aioseop_class.php:777
+#: aioseop_class.php:787
 msgid "Use noindex for Date Archives:"
 msgstr "Использовать noindex для архивов дат:"
 
-#: aioseop_class.php:773
+#: aioseop_class.php:783
 msgid "Use noindex for Categories:"
 msgstr "Использовать noindex для рубрик:"
 
-#: aioseop_class.php:768
+#: aioseop_class.php:778
 msgid "Dynamically Generate Keywords for Posts Page/Archives:"
 msgstr "Генерировать динамически ключевые слова для страницы с публикациями/архивов:"
 
-#: aioseop_class.php:763
+#: aioseop_class.php:773
 msgid "Use Tags for META keywords:"
 msgstr "Использовать метки как ключи:"
 
-#: aioseop_class.php:758
+#: aioseop_class.php:768
 msgid "Use Categories for META keywords:"
 msgstr "Использовать рубрики как ключи:"
 
-#: aioseop_class.php:746
+#: aioseop_class.php:756
 msgid "Enhanced Ecommerce:"
 msgstr "Улучшенная Ecommerce:"
 
-#: aioseop_class.php:734
+#: aioseop_class.php:744
 msgid "Enhanced Link Attribution:"
 msgstr "Улучшенная ссылка авторства:"
 
-#: aioseop_class.php:722
+#: aioseop_class.php:732
 msgid "Track Outbound Links:"
 msgstr "Отслеживать исходящие ссылки:"
 
-#: aioseop_class.php:710
+#: aioseop_class.php:720
 msgid "Exclude Users From Tracking:"
 msgstr "Исключить пользователей из отслеживания:"
 
-#: aioseop_class.php:698
+#: aioseop_class.php:708
 msgid "Display Advertiser Tracking:"
 msgstr "Показывать отслеживание рекламодателей:"
 
-#: aioseop_class.php:686
+#: aioseop_class.php:696
 msgid "Anonymize IP Addresses:"
 msgstr "Анонимизация IP-адресов:"
 
-#: aioseop_class.php:673
+#: aioseop_class.php:683
 msgid "Additional Domains:"
 msgstr "Дополнительные домены:"
 
-#: aioseop_class.php:661
+#: aioseop_class.php:671
 msgid "Track Multiple Domains:"
 msgstr "Отслеживать несколько доменов:"
 
-#: aioseop_class.php:649
+#: aioseop_class.php:659
 msgid "Tracking Domain:"
 msgstr "Отслеживание домена:"
 
-#: aioseop_class.php:633
+#: aioseop_class.php:643
 msgid "Advanced Analytics Options:"
 msgstr "Расширенные настройки аналитики:"
 
-#: aioseop_class.php:627
+#: aioseop_class.php:637
 msgid "Google Analytics ID:"
 msgstr "Google Analytics ID:"
 
-#: aioseop_class.php:621
+#: aioseop_class.php:631
 msgid "Specify Publisher URL:"
 msgstr "Указать URL Издателя:"
 
-#: aioseop_class.php:611
+#: aioseop_class.php:621
 msgid "Display Publisher Meta on Front Page:"
 msgstr "Отображать тег Издатель (publisher) на главной странице:"
 
-#: aioseop_class.php:605
+#: aioseop_class.php:615
 msgid "Display Google Authorship:"
 msgstr "Отображать Google авторство:"
 
-#: aioseop_class.php:595
+#: aioseop_class.php:605
 msgid "Advanced Authorship Options:"
 msgstr "Расширенные настройки авторства:"
 
-#: aioseop_class.php:589
+#: aioseop_class.php:599
 msgid "Specify A Preferred Name:"
 msgstr "Укажите предпочтительное название:"
 
-#: aioseop_class.php:586
+#: aioseop_class.php:596
 msgid "Set Preferred Site Name:"
 msgstr "Установите предпочтительное название сайта:"
 
-#: aioseop_class.php:583
+#: aioseop_class.php:593
 msgid "Display Sitelinks Search Box:"
 msgstr "Отображать ссылки сайта в поисковом окне:"
 
-#: aioseop_class.php:578
+#: aioseop_class.php:588
 msgid "Disable Google Plus Profile:"
 msgstr "Отключить профиль Google+:"
 
-#: aioseop_class.php:573
+#: aioseop_class.php:583
 msgid "Google Plus Default Profile:"
 msgstr "Профиль в Google+:"
 
-#: aioseop_class.php:568
+#: aioseop_class.php:578
 msgid "Pinterest Site Verification:"
 msgstr "Pinterest верификация:"
 
-#: aioseop_class.php:563
+#: aioseop_class.php:573
 msgid "Bing Webmaster Center:"
 msgstr "Центр вебмастера Bing:"
 
-#: aioseop_class.php:558
+#: aioseop_class.php:568
 msgid "Google Webmaster Tools:"
 msgstr "Инструменты вебмастера Google:"
 
@@ -2558,177 +2599,177 @@ msgstr "Отображать меню в верхней панели:"
 msgid "Display Menu In Admin Bar:"
 msgstr "Отображать меню в админ панели:"
 
-#: aioseop_class.php:552
+#: aioseop_class.php:562
 msgid "Show Column Labels for Custom Post Types:"
 msgstr "Показывать настройки SEO для пользовательских типов записей:"
 
-#: aioseop_class.php:542
+#: aioseop_class.php:552
 msgid "Custom titles:"
 msgstr "Свои заголовки:"
 
-#: aioseop_class.php:537
+#: aioseop_class.php:547
 msgid "Default to NOFOLLOW:"
 msgstr "По умолчанию NOFOLLOW:"
 
-#: aioseop_class.php:532
+#: aioseop_class.php:542
 msgid "Default to NOINDEX:"
 msgstr "По умолчанию NOINDEX:"
 
-#: aioseop_class.php:521
+#: aioseop_class.php:531
 msgid "Enable Advanced Options:"
 msgstr "Включить расширенные опции:"
 
-#: aioseop_class.php:509
+#: aioseop_class.php:519
 msgid "SEO on only these post types:"
 msgstr "SEO только для этих типов записей:"
 
-#: aioseop_class.php:500
+#: aioseop_class.php:510
 msgid "SEO for Custom Post Types:"
 msgstr "SEO для пользовательских типов записей:"
 
-#: aioseop_class.php:494
+#: aioseop_class.php:504
 msgid "Paged Format:"
 msgstr "Формат для навигации:"
 
-#: aioseop_class.php:488
+#: aioseop_class.php:498
 msgid "404 Title Format:"
 msgstr "Формат заголовков страницы 404:"
 
-#: aioseop_class.php:482
+#: aioseop_class.php:492
 msgid "Description Format"
 msgstr "Формат описания"
 
-#: aioseop_class.php:476
+#: aioseop_class.php:486
 msgid "Search Title Format:"
 msgstr "Формат заголовков страницы поиска:"
 
-#: aioseop_class.php:470
+#: aioseop_class.php:480
 msgid "Tag Title Format:"
 msgstr "Формат заголовков тегов:"
 
-#: aioseop_class.php:464
+#: aioseop_class.php:474
 msgid "Author Archive Title Format:"
 msgstr "Формат заголовков архивов авторов:"
 
-#: aioseop_class.php:458
+#: aioseop_class.php:468
 msgid "Date Archive Title Format:"
 msgstr "Формат заголовков архивов дат:"
 
-#: aioseop_class.php:452
+#: aioseop_class.php:462
 msgid "Archive Title Format:"
 msgstr "Формат заголовков архивов:"
 
-#: aioseop_class.php:446
+#: aioseop_class.php:456
 msgid "Category Title Format:"
 msgstr "Формат заголовков рубрик:"
 
-#: aioseop_class.php:440
+#: aioseop_class.php:450
 msgid "Post Title Format:"
 msgstr "Формат заголовков записей:"
 
-#: aioseop_class.php:434
+#: aioseop_class.php:444
 msgid "Page Title Format:"
 msgstr "Формат заголовков страниц:"
 
-#: aioseop_class.php:428
+#: aioseop_class.php:438
 msgid "Home Page Title Format:"
 msgstr "Формат заголовка главной страницы:"
 
-#: aioseop_class.php:419
+#: aioseop_class.php:429
 msgid "Use Original Title:"
 msgstr "Использовать заголовок по умолчанию:"
 
-#: aioseop_class.php:409 modules/aioseop_performance.php:63
+#: aioseop_class.php:419 modules/aioseop_performance.php:63
 msgid "Force Rewrites:"
 msgstr "Принудительная перезапись:"
 
-#: aioseop_class.php:400
+#: aioseop_class.php:410
 msgid "Rewrite Titles:"
 msgstr "Перезаписывать заголовки:"
 
-#: aioseop_class.php:395
+#: aioseop_class.php:405
 msgid "Enable Custom Canonical URLs:"
 msgstr "Включить пользовательские канонические URL:"
 
-#: aioseop_class.php:390
+#: aioseop_class.php:400
 msgid "No Pagination for Canonical URLs:"
 msgstr "Запретить пагинацию для канонических URL:"
 
-#: aioseop_class.php:386
+#: aioseop_class.php:396
 msgid "Canonical URLs:"
 msgstr "Канонические URL:"
 
-#: aioseop_class.php:377
+#: aioseop_class.php:387
 msgid "Use Static Front Page Instead"
 msgstr "Использовать (взамен) статическую главную страницу"
 
-#: aioseop_class.php:370
+#: aioseop_class.php:380
 msgid "Home Keywords (comma separated):"
 msgstr "Ключевые слова главной страницы (разделять запятыми):"
 
-#: aioseop_class.php:366 aioseop_class.php:382 aioseop_class.php:405
-#: aioseop_class.php:415 aioseop_class.php:424 aioseop_class.php:505
-#: aioseop_class.php:526 aioseop_class.php:600 aioseop_class.php:616
-#: aioseop_class.php:638 modules/aioseop_performance.php:68
+#: aioseop_class.php:376 aioseop_class.php:392 aioseop_class.php:415
+#: aioseop_class.php:425 aioseop_class.php:434 aioseop_class.php:515
+#: aioseop_class.php:536 aioseop_class.php:610 aioseop_class.php:626
+#: aioseop_class.php:648 modules/aioseop_performance.php:68
 msgid "Disabled"
 msgstr "Отключить"
 
-#: aioseop_class.php:365 aioseop_class.php:381 aioseop_class.php:404
-#: aioseop_class.php:414 aioseop_class.php:423 aioseop_class.php:504
-#: aioseop_class.php:525 aioseop_class.php:599 aioseop_class.php:615
-#: aioseop_class.php:637 modules/aioseop_performance.php:67
+#: aioseop_class.php:375 aioseop_class.php:391 aioseop_class.php:414
+#: aioseop_class.php:424 aioseop_class.php:433 aioseop_class.php:514
+#: aioseop_class.php:535 aioseop_class.php:609 aioseop_class.php:625
+#: aioseop_class.php:647 modules/aioseop_performance.php:67
 msgid "Enabled"
 msgstr "Включить"
 
-#: aioseop_class.php:361
+#: aioseop_class.php:371
 msgid "Use Keywords:"
 msgstr "Использовать ключевые слова:"
 
-#: aioseop_class.php:351
+#: aioseop_class.php:361
 msgid "Home Description:"
 msgstr "Описание главной стр.:"
 
-#: aioseop_class.php:341
+#: aioseop_class.php:351
 msgid "Home Title:"
 msgstr "Заголовок главной стр.:"
 
-#: aioseop_class.php:332
+#: aioseop_class.php:342
 msgid "Disable Google Analytics on this page."
 msgstr "Отключить Google Analytics на странице."
 
-#: aioseop_class.php:331
+#: aioseop_class.php:341
 msgid "Disable SEO on this page."
 msgstr "Отключить SEO для страницы."
 
-#: aioseop_class.php:330
+#: aioseop_class.php:340
 msgid "Don't display this page in the sitemap."
 msgstr "Не отображать эту страницу в карте сайта (sitemap)."
 
-#: aioseop_class.php:329
+#: aioseop_class.php:339
 msgid "Check this box to ask search engines not to follow links from this page."
 msgstr "Отметьте, чтобы попросить поисковых роботов не переходить по ссылкам на странице."
 
-#: aioseop_class.php:328
+#: aioseop_class.php:338
 msgid "Check this box to ask search engines not to index this page."
 msgstr "Отметьте, чтобы попросить поисковых роботов не индексировать эту страницу."
 
-#: aioseop_class.php:327
+#: aioseop_class.php:337
 msgid "Override the canonical URLs for this post."
 msgstr "Переопределить канонические ссылки для этой записи."
 
-#: aioseop_class.php:326
+#: aioseop_class.php:336
 msgid "A comma separated list of your most important keywords for this page that will be written as META keywords."
 msgstr "Ключевые слова (разделяются запятыми) для страницы."
 
-#: aioseop_class.php:325
+#: aioseop_class.php:335
 msgid "The META description for this page. This will override any autogenerated descriptions."
 msgstr "Описание (description) для страницы. Это перезапишет любые автосгенерированные описания."
 
-#: aioseop_class.php:324
+#: aioseop_class.php:334
 msgid "A custom title that shows up in the title tag for this page."
 msgstr "Настраиваемые заголовки записей для поисковых систем (результаты поиска)."
 
-#: aioseop_class.php:323
+#: aioseop_class.php:333
 msgid "A preview of what this page might look like in search engine results."
 msgstr "Узнайте, как эта страница выглядит в результатах поисковой выдачи."
 
@@ -2940,7 +2981,7 @@ msgstr "Отметьте, если Вы хотите использовать Al
 msgid "%page% - The page number"
 msgstr "%page% - Номер страницы"
 
-#: aioseop_class.php:183 aioseop_class.php:3120 aioseop_class.php:3177
+#: aioseop_class.php:183 aioseop_class.php:3132 aioseop_class.php:3189
 msgid "The following macros are supported:"
 msgstr "Поддерживаемые макросы:"
 
@@ -3036,19 +3077,19 @@ msgstr "%category_title% - Название рубрики (по умолчан�
 msgid "This controls the format of the title tag for Category Archives.<br />The following macros are supported:"
 msgstr "Это управляет форматом тега title для категории Архивы.<бр />Следующие макросы поддерживаются:"
 
-#: aioseop_class.php:127 aioseop_class.php:3134
+#: aioseop_class.php:127 aioseop_class.php:3146
 msgid "%post_author_lastname% - This post's author' last name (capitalized)"
 msgstr "%post_author_lastname% - Фамилия автора записи (с прописной)"
 
-#: aioseop_class.php:126 aioseop_class.php:3133
+#: aioseop_class.php:126 aioseop_class.php:3145
 msgid "%post_author_firstname% - This post's author' first name (capitalized)"
 msgstr "%post_author_firstname% - Имя автора записи (с прописной)"
 
-#: aioseop_class.php:125 aioseop_class.php:3132
+#: aioseop_class.php:125 aioseop_class.php:3144
 msgid "%post_author_nicename% - This post's author' nicename"
 msgstr "%post_author_nicename% - Ник автора записи"
 
-#: aioseop_class.php:124 aioseop_class.php:3131
+#: aioseop_class.php:124 aioseop_class.php:3143
 msgid "%post_author_login% - This post's author' login"
 msgstr "%page_author_login% - Логин автора записи"
 
@@ -3095,16 +3136,16 @@ msgstr "%page_title% - Заголовок страницы (по умолчан�
 #: aioseop_class.php:97 aioseop_class.php:107 aioseop_class.php:120
 #: aioseop_class.php:135 aioseop_class.php:141 aioseop_class.php:146
 #: aioseop_class.php:154 aioseop_class.php:159 aioseop_class.php:164
-#: aioseop_class.php:168 aioseop_class.php:178 aioseop_class.php:3122
-#: aioseop_class.php:3179
+#: aioseop_class.php:168 aioseop_class.php:178 aioseop_class.php:3134
+#: aioseop_class.php:3191
 msgid "%blog_description% - Your blog description"
 msgstr "%blog_description% - Описание Вашего блога"
 
 #: aioseop_class.php:96 aioseop_class.php:106 aioseop_class.php:119
 #: aioseop_class.php:134 aioseop_class.php:140 aioseop_class.php:145
 #: aioseop_class.php:153 aioseop_class.php:158 aioseop_class.php:163
-#: aioseop_class.php:167 aioseop_class.php:177 aioseop_class.php:3121
-#: aioseop_class.php:3178
+#: aioseop_class.php:167 aioseop_class.php:177 aioseop_class.php:3133
+#: aioseop_class.php:3190
 msgid "%blog_title% - Your blog title"
 msgstr "%blog_title% - Заголовок блога"
 
@@ -3164,7 +3205,7 @@ msgstr "Включение этой опции позволит Вам наст�
 msgid "Checking this option will set the Canonical URL for all paginated content to the first page."
 msgstr "Эта опция установит канонический URL на первой странице для всего контента (страниц) пагинации."
 
-#: aioseop_class.php:69 aioseop_class.php:997
+#: aioseop_class.php:69 aioseop_class.php:1007
 #: modules/aioseop_importer_exporter.php:46
 msgid "General Settings"
 msgstr "Общие настройки"
